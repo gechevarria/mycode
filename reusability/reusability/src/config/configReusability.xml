@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<programming_languages>
+		<element>
+			<name>java</name>
+			<source_code-file_ext>java</source_code-file_ext>
+		</element>
+		<element>
+			<name>c#</name>
+			<source_code-file_ext>cs</source_code-file_ext>
+		</element>		
+	</programming_languages>
+	<data_storage>
+		<element>
+			<name>Relational Database</name>
+			<keywords>
+				<element>SELECT</element>
+			</keywords>
+		</element>
+		<element>
+			<name>NoSQL Database</name>
+		</element>
+	</data_storage>
+	<data_storage_products>
+		<element>
+			<name>Oracle</name>
+			<specific_functions />
+		</element>
+		<element>
+			<name>MySQL</name>
+			<specific_functions />
+		</element>
+		<element>
+			<name>Microsoft SQL Server</name>
+			<specific_functions />
+		</element>
+		<element>
+			<name>PostgreSQL</name>
+			<specific_functions />
+		</element>
+		<element>
+			<name>DB2</name>
+			<specific_functions />
+		</element>
+		<element>
+			<name>Other</name>
+			<specific_functions />
+		</element>
+	</data_storage_products>
+</config>
+

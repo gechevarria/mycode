@@ -1,0 +1,28 @@
+package reusability.beans;
+
+public class DataStorageProduct {
+	private String name;
+	private String[] specificFunctions;
+	
+	public DataStorageProduct() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String[] getSpecificFunctions() {
+		return specificFunctions;
+	}
+
+	public void setSpecificFunctions(String[] specificFunctions) {
+		this.specificFunctions = specificFunctions;
+	}
+	
+	
+}
