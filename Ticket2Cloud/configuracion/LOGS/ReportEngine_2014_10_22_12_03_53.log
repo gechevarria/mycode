@@ -1,0 +1,64 @@
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.api.impl.ReportEngine <init>
+DETALLADO: ReportEngine created. EngineConfig: EngineConfig: logDest=C:/TICKCLOUD/LOGS;logLevel=FINE;org.eclipse.birt.report.engine.api.EngineConfig.scriptObjects={};BIRT_HOME=C:/Soft/birt-runtime-4_4_0/ReportEngine;org.eclipse.birt.report.engine.api.EngineConfig.emitterConfigs={html=org.eclipse.birt.report.engine.api.HTMLEmitterConfig@2db3441e}; 
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.reportitemGeneration
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadGenerationExtensionDefns
+DETALLADO: Load generation extension: Chart
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.reportitemPresentation
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadPresentationExtensionDefns
+DETALLADO: Load prsentation extension: Chart
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.reportitemQuery
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadQueryExtensionDefns
+DETALLADO: Load query extension: Chart
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.emitters
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load html emitter org.eclipse.birt.report.engine.emitter.html
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load pdf emitter org.eclipse.birt.report.engine.emitter.pdf
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load postscript emitter org.eclipse.birt.report.engine.emitter.postscript
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load ppt emitter org.eclipse.birt.report.engine.emitter.ppt
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load xls emitter org.eclipse.birt.report.engine.emitter.prototype.excel
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load doc emitter org.eclipse.birt.report.engine.emitter.word
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load docx emitter org.eclipse.birt.report.engine.emitter.docx
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load pptx emitter org.eclipse.birt.report.engine.emitter.pptx
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load odp emitter org.eclipse.birt.report.engine.emitter.odp
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load ods emitter org.eclipse.birt.report.engine.emitter.prototype.ods
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load odt emitter org.eclipse.birt.report.engine.emitter.odt
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load xlsx emitter uk.co.spudsoft.birt.emitters.excel.XlsxEmitter
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+DETALLADO: Load xls_spudsoft emitter uk.co.spudsoft.birt.emitters.excel.XlsEmitter
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.reportEventHandler
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.reportItemPreparation
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.dataExtraction
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadDataExtractionExtensions
+DETALLADO: Load data extraction extension: org.eclipse.birt.report.engine.dataextraction.csv
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+DETALLADO: Start load extension point: org.eclipse.birt.report.engine.extendedItemFactory
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+DETALLADO: Load extendedItem extension: Crosstab
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+DETALLADO: Load extendedItem extension: CrosstabCell
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+DETALLADO: Load extendedItem extension: AggregationCell
+oct 22, 2014 12:03:53 PM org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+DETALLADO: ReportEngine.openReportDesign: designName=C:/TICKCLOUD/PLANTILLAS\TIPO1\factura_report.rptdesign 
+oct 22, 2014 12:03:55 PM org.eclipse.birt.report.engine.api.impl.ReportEngine createRunAndRenderTask
+DETALLADO: ReportEngine.createRunAndRenderTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@373976b3 
+oct 22, 2014 12:03:55 PM org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+DETALLADO: EngineTask.setAppContext: context=

@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.0.v201405191524 Build &lt;4.4.0.v20140606-1451></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="112">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:3306/tickcloud</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cm9vdA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="lineaFacturaDataSet" id="113">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ID</text-property>
+                    <text-property name="heading">ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Orden</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Orden</text-property>
+                    <text-property name="heading">Orden</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Producto</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Producto</text-property>
+                    <text-property name="heading">Producto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Numero_Unidades</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Numero_Unidades</text-property>
+                    <text-property name="heading">Numero_Unidades</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Peso_kg</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Peso_kg</text-property>
+                    <text-property name="heading">Peso_kg</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">IVA_Aplicado</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">IVA_Aplicado</text-property>
+                    <text-property name="heading">IVA_Aplicado</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Precio_Unidad_Sin_IVA</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Precio_Unidad_Sin_IVA</text-property>
+                    <text-property name="heading">Precio_Unidad_Sin_IVA</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Precio_Unidad_Con_IVA</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Precio_Unidad_Con_IVA</text-property>
+                    <text-property name="heading">Precio_Unidad_Con_IVA</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Precio_Kg_Sin_IVA</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Precio_Kg_Sin_IVA</text-property>
+                    <text-property name="heading">Precio_Kg_Sin_IVA</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Precio_Kg_Con_IVA</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Precio_Kg_Con_IVA</text-property>
+                    <text-property name="heading">Precio_Kg_Con_IVA</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Cuota_IVA</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Cuota_IVA</text-property>
+                    <text-property name="heading">Cuota_IVA</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Id_Factura</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Id_Factura</text-property>
+                    <text-property name="heading">Id_Factura</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Orden</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Producto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Numero_Unidades</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Peso_kg</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">IVA_Aplicado</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Precio_Unidad_Sin_IVA</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Precio_Unidad_Con_IVA</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Precio_Kg_Sin_IVA</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Precio_Kg_Con_IVA</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Cuota_IVA</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Id_Factura</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Orden</property>
+                    <property name="nativeName">Orden</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-6</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Producto</property>
+                    <property name="nativeName">Producto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Numero_Unidades</property>
+                    <property name="nativeName">Numero_Unidades</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-6</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Peso_kg</property>
+                    <property name="nativeName">Peso_kg</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">IVA_Aplicado</property>
+                    <property name="nativeName">IVA_Aplicado</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Precio_Unidad_Sin_IVA</property>
+                    <property name="nativeName">Precio_Unidad_Sin_IVA</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Precio_Unidad_Con_IVA</property>
+                    <property name="nativeName">Precio_Unidad_Con_IVA</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Precio_Kg_Sin_IVA</property>
+                    <property name="nativeName">Precio_Kg_Sin_IVA</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Precio_Kg_Con_IVA</property>
+                    <property name="nativeName">Precio_Kg_Con_IVA</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">Cuota_IVA</property>
+                    <property name="nativeName">Cuota_IVA</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">Id_Factura</property>
+                    <property name="nativeName">Id_Factura</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from 
+linea_factura]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Orden</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-6</design:nativeDataTypeCode>
+            <design:precision>2</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Orden</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Orden</design:label>
+            <design:formattingHints>
+              <design:displaySize>2</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Producto</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Producto</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Producto</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Numero_Unidades</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-6</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Numero_Unidades</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Numero_Unidades</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Peso_kg</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Peso_kg</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Peso_kg</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>IVA_Aplicado</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>IVA_Aplicado</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>IVA_Aplicado</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Precio_Unidad_Sin_IVA</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Precio_Unidad_Sin_IVA</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Precio_Unidad_Sin_IVA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Precio_Unidad_Con_IVA</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Precio_Unidad_Con_IVA</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Precio_Unidad_Con_IVA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Precio_Kg_Sin_IVA</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Precio_Kg_Sin_IVA</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Precio_Kg_Sin_IVA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Precio_Kg_Con_IVA</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Precio_Kg_Con_IVA</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Precio_Kg_Con_IVA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Cuota_IVA</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Cuota_IVA</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Cuota_IVA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Id_Factura</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Id_Factura</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Id_Factura</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="emisorFacturaDataSet" id="185">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">NIF</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">NIF</text-property>
+                    <text-property name="heading">NIF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Nombre</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Nombre</text-property>
+                    <text-property name="heading">Nombre</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Apellido1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Apellido1</text-property>
+                    <text-property name="heading">Apellido1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Apellido2</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Apellido2</text-property>
+                    <text-property name="heading">Apellido2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Razon_Social</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Razon_Social</text-property>
+                    <text-property name="heading">Razon_Social</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Logo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Logo</text-property>
+                    <text-property name="heading">Logo</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NIF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Nombre</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Apellido1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Apellido2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Razon_Social</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NIF</property>
+                    <property name="nativeName">NIF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Nombre</property>
+                    <property name="nativeName">Nombre</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Apellido1</property>
+                    <property name="nativeName">Apellido1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Apellido2</property>
+                    <property name="nativeName">Apellido2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Razon_Social</property>
+                    <property name="nativeName">Razon_Social</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * 
+from emisor_factura]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NIF</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NIF</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NIF</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Nombre</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Nombre</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Nombre</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Apellido1</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Apellido1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Apellido1</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Apellido2</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Apellido2</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Apellido2</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Razon_Social</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Razon_Social</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Razon_Social</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="facturaSimplificadaDataSet" id="663">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Codigo_Barras</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="displayName">Codigo_Barras</text-property>
+                    <text-property name="heading">Codigo_Barras</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Codigo_Barras</property>
+                        <property name="dataType">blob</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Codigo_Barras</property>
+                    <property name="nativeName">Codigo_Barras</property>
+                    <property name="dataType">blob</property>
+                    <property name="nativeDataType">-4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select factura_simplificada.Codigo_Barras
+from factura_simplificada]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="NewStyle" id="196"/>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="259">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="width">3.71875in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SumaElementos</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Aggregation"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_1</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Aggregation"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">row["Aggregation"]</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">BirtDateTime.now()</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">imgBarCode</property>
+                    <text-property name="displayName">BarCode</text-property>
+                    <expression name="expression" type="javascript">reportContext.getAppContext().get("imgBarCode");</expression>
+                    <property name="dataType">blob</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="260">
+                <property name="width">0.3541666666666667in</property>
+            </column>
+            <column id="261">
+                <property name="width">1.3854166666666667in</property>
+            </column>
+            <column id="262">
+                <property name="width">1.5520833333333333in</property>
+            </column>
+            <column id="263">
+                <property name="width">0.4270833333333333in</property>
+            </column>
+            <row id="264">
+                <cell id="265">
+                    <data id="662"/>
+                </cell>
+                <cell id="266">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="661">
+                        <property name="dataSet">emisorFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">NIF</property>
+                                <text-property name="displayName">NIF</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NIF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Nombre</property>
+                                <text-property name="displayName">Nombre</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Nombre"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido1</property>
+                                <text-property name="displayName">Apellido1</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido2</property>
+                                <text-property name="displayName">Apellido2</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Razon_Social</property>
+                                <text-property name="displayName">Razon_Social</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Razon_Social"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Logo</property>
+                                <text-property name="displayName">Logo</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Logo"]</expression>
+                                <property name="dataType">blob</property>
+                            </structure>
+                        </list-property>
+                        <property name="source">expr</property>
+                        <expression name="valueExpr">row["Logo"]</expression>
+                    </image>
+                </cell>
+                <cell id="268"/>
+            </row>
+            <row id="269">
+                <cell id="270"/>
+                <cell id="271">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="184">
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">emisorFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">NIF</property>
+                                <expression name="expression" type="javascript">dataSetRow["NIF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Nombre</property>
+                                <expression name="expression" type="javascript">dataSetRow["Nombre"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido1</property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido2</property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Razon_Social</property>
+                                <expression name="expression" type="javascript">dataSetRow["Razon_Social"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Razon_Social</property>
+                    </data>
+                </cell>
+                <cell id="273"/>
+            </row>
+            <row id="274">
+                <cell id="275"/>
+                <cell id="276">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="187">
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">emisorFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">NIF</property>
+                                <expression name="expression" type="javascript">dataSetRow["NIF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Nombre</property>
+                                <expression name="expression" type="javascript">dataSetRow["Nombre"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido1</property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido2</property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Razon_Social</property>
+                                <expression name="expression" type="javascript">dataSetRow["Razon_Social"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Nombre</property>
+                    </data>
+                </cell>
+                <cell id="278"/>
+            </row>
+            <row id="279">
+                <cell id="280"/>
+                <cell id="281">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <data id="186">
+                        <property name="dataSet">emisorFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">NIF</property>
+                                <expression name="expression" type="javascript">dataSetRow["NIF"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Nombre</property>
+                                <expression name="expression" type="javascript">dataSetRow["Nombre"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido1</property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Apellido2</property>
+                                <expression name="expression" type="javascript">dataSetRow["Apellido2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Razon_Social</property>
+                                <expression name="expression" type="javascript">dataSetRow["Razon_Social"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">NIF</property>
+                    </data>
+                </cell>
+                <cell id="283"/>
+            </row>
+            <row id="284">
+                <cell id="285"/>
+                <cell id="286">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="391">
+                        <text-property name="text">--------------------------------------------------------------</text-property>
+                    </label>
+                </cell>
+                <cell id="288"/>
+            </row>
+            <row id="289">
+                <cell id="290"/>
+                <cell id="291">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="394">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Factura Simplificada</text-property>
+                    </label>
+                </cell>
+                <cell id="293"/>
+            </row>
+            <row id="294">
+                <cell id="295"/>
+                <cell id="296">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="392">
+                        <text-property name="text">--------------------------------------------------------------</text-property>
+                    </label>
+                </cell>
+                <cell id="298"/>
+            </row>
+            <row id="543">
+                <cell id="544">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <table id="642">
+                        <property name="width">3.625in</property>
+                        <property name="dataSet">lineaFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Id_Factura</property>
+                                <text-property name="displayName">Id_Factura</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Id_Factura"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <expression name="expression" type="javascript">dataSetRow["Id_Factura"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="655">
+                            <property name="width">2.0208333333333335in</property>
+                        </column>
+                        <column id="656">
+                            <property name="width">0.90625in</property>
+                        </column>
+                        <column id="657">
+                            <property name="width">0.6979166666666666in</property>
+                        </column>
+                        <footer>
+                            <row id="651">
+                                <cell id="652">
+                                    <text-data id="658">
+                                        <expression name="valueExpr">BirtDateTime.today()</expression>
+                                        <property name="contentType">html</property>
+                                    </text-data>
+                                </cell>
+                                <cell id="653">
+                                    <label id="660">
+                                        <text-property name="text">Id. Factura</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="654">
+                                    <data id="659">
+                                        <property name="resultSetColumn">Column Binding</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="627">
+                <cell id="628">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                </cell>
+            </row>
+            <row id="324">
+                <cell id="325">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">7</property>
+                    <table id="499">
+                        <property name="width">4.416666666666667in</property>
+                        <property name="dataSet">lineaFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ID</property>
+                                <text-property name="displayName">ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Producto</property>
+                                <text-property name="displayName">Producto</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Producto"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Numero_Unidades</property>
+                                <text-property name="displayName">Numero_Unidades</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Numero_Unidades"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Peso_kg</property>
+                                <text-property name="displayName">Peso_kg</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Peso_kg"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Precio_Unidad_Con_IVA</property>
+                                <text-property name="displayName">Precio_Unidad_Con_IVA</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Unidad_Con_IVA"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Precio_Kg_Sin_IVA</property>
+                                <text-property name="displayName">Precio_Kg_Sin_IVA</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Kg_Sin_IVA"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <text-property name="displayName">ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_1</property>
+                                <text-property name="displayName">PRODUCTO</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Producto"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_2</property>
+                                <text-property name="displayName">KG</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Peso_kg"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_3</property>
+                                <text-property name="displayName">€/KG</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Kg_Con_IVA"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_4</property>
+                                <text-property name="displayName">PRECIO</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Unidad_Con_IVA"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <text-property name="displayName">NUMERO_ELEMENTOS</text-property>
+                                <property name="dataType">integer</property>
+                                <property name="aggregateFunction">COUNT</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["ID"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation_1</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["Precio_Unidad_Con_IVA"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="524">
+                            <property name="width">0.6354166666666666in</property>
+                        </column>
+                        <column id="525">
+                            <property name="width">0.1875in</property>
+                        </column>
+                        <column id="526">
+                            <property name="width">1.0833333333333333in</property>
+                        </column>
+                        <column id="527">
+                            <property name="width">0.19791666666666666in</property>
+                        </column>
+                        <column id="528">
+                            <property name="width">0.4375in</property>
+                        </column>
+                        <column id="529">
+                            <property name="width">0.5104166666666666in</property>
+                        </column>
+                        <column id="530">
+                            <property name="width">1.3645833333333333in</property>
+                        </column>
+                        <header>
+                            <row id="500">
+                                <cell id="501">
+                                    <property name="colSpan">4</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="531">
+                                        <text-property name="text">ART	</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="505">
+                                    <label id="532">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">kg</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="506">
+                                    <label id="451">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">€/kg</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="507">
+                                    <label id="455">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">€</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="508">
+                                <cell id="509">
+                                    <data id="535">
+                                        <property name="resultSetColumn">Column Binding</property>
+                                    </data>
+                                </cell>
+                                <cell id="510">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="536">
+                                        <property name="resultSetColumn">Column Binding_1</property>
+                                    </data>
+                                </cell>
+                                <cell id="513">
+                                    <data id="537">
+                                        <property name="resultSetColumn">Column Binding_2</property>
+                                    </data>
+                                </cell>
+                                <cell id="514">
+                                    <data id="538">
+                                        <property name="resultSetColumn">Column Binding_3</property>
+                                    </data>
+                                </cell>
+                                <cell id="515">
+                                    <data id="539">
+                                        <property name="resultSetColumn">Column Binding_4</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="516">
+                                <property name="marginTop">auto</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="height">0.28125in</property>
+                                <cell id="517">
+                                    <property name="verticalAlign">bottom</property>
+                                    <label id="533">
+                                        <text-property name="text">TOTAL (</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="518">
+                                    <property name="verticalAlign">bottom</property>
+                                    <data id="540">
+                                        <property name="resultSetColumn">Aggregation</property>
+                                    </data>
+                                </cell>
+                                <cell id="519">
+                                    <property name="verticalAlign">bottom</property>
+                                    <label id="534">
+                                        <text-property name="text">)</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="520"/>
+                                <cell id="521"/>
+                                <cell id="522"/>
+                                <cell id="523">
+                                    <property name="verticalAlign">bottom</property>
+                                    <data id="541">
+                                        <property name="fontSize">medium</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="fontStyle">normal</property>
+                                        <property name="verticalAlign">bottom</property>
+                                        <property name="resultSetColumn">Aggregation_1</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="329"/>
+            <row id="334"/>
+            <row id="339"/>
+            <row id="344"/>
+            <row id="349"/>
+            <row id="354"/>
+            <row id="359">
+                <cell id="360">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <label id="624">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                    </label>
+                </cell>
+            </row>
+            <row id="364">
+                <cell id="365">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">3</property>
+                    <table id="590">
+                        <property name="width">3.625in</property>
+                        <property name="dataSet">lineaFacturaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">IVA_Aplicado</property>
+                                <text-property name="displayName">IVA_Aplicado</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["IVA_Aplicado"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Precio_Unidad_Sin_IVA</property>
+                                <text-property name="displayName">Precio_Unidad_Sin_IVA</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Unidad_Sin_IVA"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Precio_Unidad_Con_IVA</property>
+                                <text-property name="displayName">Precio_Unidad_Con_IVA</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Unidad_Con_IVA"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Cuota_IVA</property>
+                                <text-property name="displayName">Cuota_IVA</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Cuota_IVA"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <expression name="expression" type="javascript">dataSetRow["IVA_Aplicado"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_1</property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Unidad_Sin_IVA"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_2</property>
+                                <expression name="expression" type="javascript">dataSetRow["Cuota_IVA"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_3</property>
+                                <expression name="expression" type="javascript">dataSetRow["Precio_Unidad_Con_IVA"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="609">
+                            <property name="width">0.4791666666666667in</property>
+                        </column>
+                        <column id="610">
+                            <property name="width">0.4479166666666667in</property>
+                        </column>
+                        <column id="611">
+                            <property name="width">1.1979166666666667in</property>
+                        </column>
+                        <column id="612">
+                            <property name="width">0.9479166666666666in</property>
+                        </column>
+                        <column id="613">
+                            <property name="width">0.5520833333333334in</property>
+                        </column>
+                        <header>
+                            <row id="591">
+                                <cell id="592">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="619">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">I.V.A</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="594">
+                                    <label id="615">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Base</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="595">
+                                    <label id="616">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">T.Iva</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="596">
+                                    <label id="617">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Total</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="597">
+                                <cell id="598">
+                                    <data id="620">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">Column Binding</property>
+                                    </data>
+                                </cell>
+                                <cell id="599">
+                                    <label id="618">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">%</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="600">
+                                    <data id="621">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">Column Binding_1</property>
+                                    </data>
+                                </cell>
+                                <cell id="601">
+                                    <data id="622">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">Column Binding_2</property>
+                                    </data>
+                                </cell>
+                                <cell id="602">
+                                    <data id="623">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">Column Binding_3</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="603">
+                                <cell id="604"/>
+                                <cell id="605"/>
+                                <cell id="606"/>
+                                <cell id="607"/>
+                                <cell id="608"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="369"/>
+            <row id="374"/>
+            <row id="554">
+                <cell id="555">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="559">
+                        <property name="textAlign">center</property>
+                        <property name="height">1.0208333333333333in</property>
+                        <property name="width">3.0833333333333335in</property>
+                        <property name="dataSet">facturaSimplificadaDataSet</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Codigo_Barras</property>
+                                <expression name="expression" type="javascript">dataSetRow["Codigo_Barras"]</expression>
+                                <property name="dataType">blob</property>
+                            </structure>
+                        </list-property>
+                        <property name="source">expr</property>
+                        <expression name="valueExpr">row["Codigo_Barras"]</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="560">
+                <cell id="561"/>
+                <cell id="562"/>
+                <cell id="563"/>
+                <cell id="564"/>
+            </row>
+            <row id="379">
+                <cell id="380">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <label id="542">
+                        <property name="fontSize">larger</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">GRACIAS POR SU VISITA</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="384">
+                <cell id="385"/>
+                <cell id="386"/>
+                <cell id="387"/>
+                <cell id="388"/>
+            </row>
+        </grid>
+    </body>
+</report>

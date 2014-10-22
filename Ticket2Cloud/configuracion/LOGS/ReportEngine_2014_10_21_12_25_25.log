@@ -1,0 +1,232 @@
+oct 21, 2014 12:25:25 PM org.eclipse.birt.report.engine.api.impl.ReportEngine <init>
+DETALLADO: ReportEngine created. EngineConfig: EngineConfig: logDest=C:/TICKCLOUD/LOGS;logLevel=FINE;org.eclipse.birt.report.engine.api.EngineConfig.scriptObjects={};BIRT_HOME=C:/Soft/birt-runtime-4_4_0/ReportEngine;org.eclipse.birt.report.engine.api.EngineConfig.emitterConfigs={html=org.eclipse.birt.report.engine.api.HTMLEmitterConfig@2a867cf3}; 
+oct 21, 2014 12:25:25 PM org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+DETALLADO: ReportEngine.openReportDesign: designName=C:/TICKCLOUD/PLANTILLAS\TIPO1\factura_report.rptdesign 
+oct 21, 2014 12:25:27 PM org.eclipse.birt.report.engine.api.impl.ReportEngine createRunAndRenderTask
+DETALLADO: ReportEngine.createRunAndRenderTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@28c68e1c 
+oct 21, 2014 12:25:27 PM org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+DETALLADO: EngineTask.setAppContext: context=
+oct 21, 2014 12:25:27 PM org.eclipse.birt.report.engine.api.impl.EngineTask loggerParamters
+DETALLADO: Running the report with paramters: 
+oct 21, 2014 12:25:31 PM org.eclipse.birt.report.data.adapter.impl.ModelAdapter adaptDataSet
+DETALLADO: handle type: org.eclipse.birt.report.model.api.OdaDataSetHandle
+oct 21, 2014 12:25:31 PM org.eclipse.birt.report.data.adapter.impl.ModelAdapter adaptDataSet
+DETALLADO: handle type: org.eclipse.birt.report.model.api.OdaDataSetHandle
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Start to prepare a PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.PreparedQuery <init>
+DETALLADO: Finished preparing the PreparedQuery.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:31 PM org.eclipse.birt.data.engine.impl.DataEngineImpl prepare
+DETALLADO: Finished preparing query.
+oct 21, 2014 12:25:32 PM org.eclipse.birt.report.data.oda.jdbc.Connection open
+DETALLADO: Connection.open(Properties). connProperties = OdaPropertyConfigId=org.eclipse.birt.report.data.oda.jdbc_Data Source;odaURL=jdbc:mysql://localhost:3306/tickcloud;odaDriverClass=com.mysql.jdbc.Driver;odaPassword=***;odaUser=root;contentBidiFormatStr=ILYNN;metadataBidiFormatStr=ILYNN;
+oct 21, 2014 12:25:33 PM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager JDBCDriverManager
+DETALLADO: JDBCDriverManager starts up
+oct 21, 2014 12:25:33 PM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager loadDriverExtensions
+INFORMACIÓN: Found JDBC driverinfo extension: driverClass=org.apache.derby.jdbc.EmbeddedDriver, connectionFactory=null
+oct 21, 2014 12:25:33 PM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager loadDriverExtensions
+INFORMACIÓN: Found JDBC driverinfo extension: driverClass=org.eclipse.birt.report.data.oda.sampledb.Driver, connectionFactory=org.eclipse.birt.report.data.oda.sampledb.SampleDBJDBCConnectionFactory
+oct 21, 2014 12:25:33 PM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager findDriver
+INFORMACIÓN: Loaded JDBC driver class in class path: com.mysql.jdbc.Driver
+oct 21, 2014 12:25:33 PM org.eclipse.birt.data.engine.executor.DataSourceQuery execute
+DETALLADO: ODA query execution time: 9 ms;
+   Executed query: select * 
+from emisor_factura
+oct 21, 2014 12:25:33 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:33 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:33 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:33 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:33 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 277 ms;
+   Executed data set: emisorFacturaDataSet
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory loadFontMappingConfig
+INFORMACIÓN: load font config in jar:file:/D:/Soft/apache-tomcat-8.0.14/webapps/Ticket2Cloud/WEB-INF/lib/org.eclipse.birt.runtime_4.4.0.v20140611-1043.jar!/fontsConfig.xml cost 37ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/ko.UTF-8/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/zh/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/KOI8-R/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/share/fonts/zh_CN/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/X11R6/lib/X11/fonts/truetype cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/zh_HK.BIG5HK/X11/fonts/TT cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/X11R6/lib/X11/fonts/tt cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/ar/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/zh_TW.BIG5/X11/fonts/TT cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/ja/X11/fonts/TT cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in d:/windows/fonts cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_2/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_5/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/hi_IN.UTF-8/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/X11R6/lib/X11/fonts/TTF cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/zh.GBK/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/share/fonts/ja/TrueType cost:0ms
+oct 21, 2014 12:25:34 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/zh_TW/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in C:/windows/fonts cost:1267ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/X11R6/lib/X11/fonts/OTF cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in e:/windows/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in e:/WINNT/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_9/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in d:/WINNT/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in g:/WINNT/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_8/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/share/fonts/zh_TW/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/ru.ansi-1251/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/share/fonts/default/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_7/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in f:/WINNT/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_13/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/euro_fonts/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in f:/windows/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/iso_8859_15/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/th_TH/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/ko/X11/fonts/TrueType cost:1ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/X/lib/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/X11R6/lib/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/share/fonts/truetype cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in C:/WINNT/fonts cost:1ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/openwin/lib/locale/zh_CN.GB18030/X11/fonts/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in g:/windows/fonts cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory$2 run
+INFORMACIÓN: register fonts in /usr/share/fonts/ko/TrueType cost:0ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory loadFontMappingConfig
+INFORMACIÓN: load font config in jar:file:/D:/Soft/apache-tomcat-8.0.14/webapps/Ticket2Cloud/WEB-INF/lib/org.eclipse.birt.runtime_4.4.0.v20140611-1043.jar!/fontsConfig_win32.xml cost 15ms
+oct 21, 2014 12:25:35 PM org.eclipse.birt.report.engine.layout.pdf.font.FontMappingManagerFactory loadFontMappingConfig
+INFORMACIÓN: load font config in jar:file:/D:/Soft/apache-tomcat-8.0.14/webapps/Ticket2Cloud/WEB-INF/lib/org.eclipse.birt.runtime_4.4.0.v20140611-1043.jar!/fontsConfig_pdf.xml cost 28ms
+oct 21, 2014 12:25:36 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:36 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:36 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 9 ms;
+   Executed data set: emisorFacturaDataSet
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 2 ms;
+   Executed data set: emisorFacturaDataSet
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 1 ms;
+   Executed data set: emisorFacturaDataSet
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.DataSourceQuery execute
+DETALLADO: ODA query execution time: 1 ms;
+   Executed query: select * from linea_factura where Id_Factura=4
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: MemoryCache is used
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper populateData
+INFORMACIÓN: Time consumed by cache is: 0 second
+oct 21, 2014 12:25:37 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 22 ms;
+   Executed data set: lineaFacturaDataSet
+oct 21, 2014 12:25:38 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 415 ms;
+   Executed data set: lineaFacturaDataSet
+oct 21, 2014 12:25:38 PM org.eclipse.birt.data.engine.impl.QueryResults getResultIterator
+DETALLADO: ODI query execution time: 9 ms;
+   Executed data set: lineaFacturaDataSet
+oct 21, 2014 12:25:38 PM org.eclipse.birt.report.engine.util.ResourceLocatorWrapper findResource
+ADVERTENCIA: Error.ResourceNotAccessible
+oct 21, 2014 12:25:38 PM org.eclipse.birt.report.data.oda.jdbc.Connection close
+DETALLADO: JDBC connection: com.mysql.jdbc.JDBC4Connection@f60d258 is closed
+oct 21, 2014 12:25:38 PM org.eclipse.birt.data.engine.impl.DataEngineImpl shutdown
+DETALLADO: Data engine shuts down
+oct 21, 2014 12:25:38 PM org.eclipse.birt.data.engine.impl.DataEngineImpl shutdown
+DETALLADO: Data Engine lifetime: 8124 ms
+oct 21, 2014 12:25:38 PM org.eclipse.birt.report.engine.api.impl.ReportEngine destroy
+DETALLADO: ReportEngine.destroy

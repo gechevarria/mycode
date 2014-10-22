@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>	
+	<birt-engine-home>C:/Soft/birt-runtime-4_4_0/ReportEngine</birt-engine-home>
+	<log-path>C:/TICKCLOUD/LOGS</log-path>
+	<recursos-path>C:/TICKCLOUD/TICKCLOUD_REPORTS</recursos-path>
+	<facturas-pdf-path>C:/TICKCLOUD/FACTURAS/PDF</facturas-pdf-path>				
+	<plantillas-facturas-path>C:/TICKCLOUD/PLANTILLAS</plantillas-facturas-path>
+	<codigos-barras-path>C:/TICKCLOUD/CODIGOS_BARRAS</codigos-barras-path>
+</config>
+
