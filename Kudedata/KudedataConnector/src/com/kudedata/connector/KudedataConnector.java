@@ -83,14 +83,16 @@ public class KudedataConnector {
 		webResource = client.resource(getBaseURI());
 
 	}
+	
+	
 
 	public static void main(String[] args) {
 		
 		String configPath= "D:/Projects/KUDETADA/eclipse-standard-luna-R-win32-x86_64/workspace/KudedataConnector/src/com/kudedata/connector/config.properties";
 		init(configPath);
 		
-		Thread checkAndSendEDIThread = new Thread(new CheckAndSendEDIThread(), "checkAndSendEDIThread");      
-		checkAndSendEDIThread.start();
+			/*Thread checkAndSendEDIThread = new Thread(new CheckAndSendEDIThread(), "checkAndSendEDIThread");      
+		checkAndSendEDIThread.start();*/
 		
 		Thread checkAndReceiveEDIThread = new Thread(new CheckAndReceiveEDIThread(), "checkAndReceiveEDIThread");      
 		checkAndReceiveEDIThread.start();
@@ -165,6 +167,16 @@ public class KudedataConnector {
 		}
 		return sc;
 		
+	}
+
+	public static void destroyClient() {
+		client.destroy();				
+	}
+
+
+	public static void createClient() {
+		client = Client.create(config);
+		webResource = client.resource(getBaseURI());		
 	}
 
 }

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ediroot>
+	<interchange Standard="EDIFACT-UNH">
+		<group>
+			<transaction Control="ME000001" DocType="ORDERS" Version="D"
+				Release="01B" Agency="UN" Association="EAN010" Name="Purchase Order Message">
+				<segment Id="BGM">
+					<element Id="BGM01">220</element>
+					<element Id="BGM02">128576</element>
+					<element Id="BGM03">9</element>
+				</segment>
+				<segment Id="DTM">
+					<element Id="DTM01" Composite="yes">
+						<subelement Sequence="1">137</subelement>
+						<subelement Sequence="2">20020830</subelement>
+						<subelement Sequence="3">102</subelement>
+					</element>
+				</segment>
+				<segment Id="PAI">
+					<element Id="PAI01" Composite="yes">
+						<subelement Sequence="3">42’&#13;
+							ALI
+						</subelement>
+					</element>
+					<element Id="PAI04">136’&#13;
+						FTX
+					</element>
+					<element Id="PAI05">ZZZ</element>
+					<element Id="PAI06">1</element>
+					<element Id="PAI07" Composite="yes">
+						<subelement Sequence="1">001</subelement>
+						<subelement Sequence="3">91’&#13;
+							RFF
+						</subelement>
+					</element>
+					<element Id="PAI08" Composite="yes">
+						<subelement Sequence="1">CT</subelement>
+						<subelement Sequence="2">652744</subelement>
+					</element>
+				</segment>
+				<segment Id="DTM">
+					<element Id="DTM01" Composite="yes">
+						<subelement Sequence="1">171</subelement>
+						<subelement Sequence="2">20020825</subelement>
+						<subelement Sequence="3">102</subelement>
+					</element>
+				</segment>
+				<loop Id="SG02">
+					<segment Id="NAD">
+						<element Id="NAD01">BY</element>
+						<element Id="NAD02" Composite="yes">
+							<subelement Sequence="1">5412345000013</subelement>
+							<subelement Sequence="3">9</subelement>
+						</element>
+					</segment>
+					<loop Id="SG03">
+						<segment Id="RFF">
+							<element Id="RFF01" Composite="yes">
+								<subelement Sequence="1">VA</subelement>
+								<subelement Sequence="2">87765432</subelement>
+							</element>
+						</segment>
+					</loop>
+					<loop Id="SG05">
+						<segment Id="CTA">
+							<element Id="CTA01">OC</element>
+							<element Id="CTA02" Composite="yes">
+								<subelement Sequence="2">P FORGET</subelement>
+							</element>
+						</segment>
+						<segment Id="COM">
+							<element Id="COM01" Composite="yes">
+								<subelement Sequence="1">0044715632478</subelement>
+								<subelement Sequence="2">TE</subelement>
+							</element>
+						</segment>
+					</loop>
+				</loop>
+				<loop Id="SG02">
+					<segment Id="NAD">
+						<element Id="NAD01">SU</element>
+						<element Id="NAD02" Composite="yes">
+							<subelement Sequence="1">4012345500004</subelement>
+							<subelement Sequence="3">9</subelement>
+						</element>
+					</segment>
+					<loop Id="SG03">
+						<segment Id="RFF">
+							<element Id="RFF01" Composite="yes">
+								<subelement Sequence="1">VA</subelement>
+								<subelement Sequence="2">56225432</subelement>
+							</element>
+						</segment>
+					</loop>
+				</loop>
+				<loop Id="SG07">
+					<segment Id="CUX">
+						<element Id="CUX01" Composite="yes">
+							<subelement Sequence="1">2</subelement>
+							<subelement Sequence="2">GBP</subelement>
+							<subelement Sequence="3">9</subelement>
+						</element>
+						<element Id="CUX02" Composite="yes">
+							<subelement Sequence="1">3</subelement>
+							<subelement Sequence="2">EUR</subelement>
+							<subelement Sequence="3">4</subelement>
+						</element>
+						<element Id="CUX03">1.67</element>
+					</segment>
+					<segment Id="DTM">
+						<element Id="DTM01" Composite="yes">
+							<subelement Sequence="1">134</subelement>
+							<subelement Sequence="2">2002080120020831</subelement>
+							<subelement Sequence="3">718</subelement>
+						</element>
+					</segment>
+				</loop>
+				<loop Id="SG10">
+					<segment Id="TDT">
+						<element Id="TDT01">20</element>
+						<element Id="TDT03">30</element>
+						<element Id="TDT04">31</element>
+					</segment>
+				</loop>
+				<loop Id="SG12">
+					<segment Id="TOD">
+						<element Id="TOD01">3</element>
+						<element Id="TOD03" Composite="yes">
+							<subelement Sequence="1">CIF</subelement>
+							<subelement Sequence="2">2E</subelement>
+							<subelement Sequence="3">9</subelement>
+						</element>
+					</segment>
+					<segment Id="LOC">
+						<element Id="LOC01">1</element>
+						<element Id="LOC02">BE-BRU</element>
+					</segment>
+				</loop>
+				<loop Id="SG28">
+					<segment Id="LIN">
+						<element Id="LIN01">1</element>
+						<element Id="LIN03" Composite="yes">
+							<subelement Sequence="1">4000862141404</subelement>
+							<subelement Sequence="2">SRV</subelement>
+						</element>
+					</segment>
+					<segment Id="PIA">
+						<element Id="PIA01">1</element>
+						<element Id="PIA02" Composite="yes">
+							<subelement Sequence="1">ABC1234</subelement>
+							<subelement Sequence="2">IN</subelement>
+						</element>
+					</segment>
+					<segment Id="IMD">
+						<element Id="IMD01">C</element>
+						<element Id="IMD03" Composite="yes">
+							<subelement Sequence="1">TU</subelement>
+							<subelement Sequence="3">9</subelement>
+						</element>
+					</segment>
+					<segment Id="QTY">
+						<element Id="QTY01" Composite="yes">
+							<subelement Sequence="1">21</subelement>
+							<subelement Sequence="2">48</subelement>
+						</element>
+					</segment>
+					<segment Id="MOA">
+						<element Id="MOA01" Composite="yes">
+							<subelement Sequence="1">203</subelement>
+							<subelement Sequence="2">699.84</subelement>
+						</element>
+					</segment>
+					<loop Id="SG32">
+						<segment Id="PRI">
+							<element Id="PRI01" Composite="yes">
+								<subelement Sequence="1">AAA</subelement>
+								<subelement Sequence="2">14.58</subelement>
+								<subelement Sequence="3">CT</subelement>
+								<subelement Sequence="4">AAE</subelement>
+								<subelement Sequence="5">1</subelement>
+								<subelement Sequence="6">KGM</subelement>
+							</element>
+						</segment>
+					</loop>
+					<loop Id="SG33">
+						<segment Id="RFF">
+							<element Id="RFF01" Composite="yes">
+								<subelement Sequence="1">PL</subelement>
+								<subelement Sequence="2">AUG93RNG04</subelement>
+							</element>
+						</segment>
+						<segment Id="DTM">
+							<element Id="DTM01" Composite="yes">
+								<subelement Sequence="1">171</subelement>
+								<subelement Sequence="2">20020801</subelement>
+								<subelement Sequence="3">102</subelement>
+							</element>
+						</segment>
+					</loop>
+					<loop Id="SG34">
+						<segment Id="PAC">
+							<element Id="PAC01">2</element>
+							<element Id="PAC02" Composite="yes">
+								<subelement Sequence="2">51</subelement>
+							</element>
+							<element Id="PAC03">CS’&#13;
+								PCI
+							</element>
+							<element Id="PAC04">14</element>
+						</segment>
+					</loop>
+					<loop Id="SG37">
+						<segment Id="LOC">
+							<element Id="LOC01">7</element>
+							<element Id="LOC02" Composite="yes">
+								<subelement Sequence="1">3312345502000</subelement>
+								<subelement Sequence="3">9</subelement>
+							</element>
+						</segment>
+						<segment Id="QTY">
+							<element Id="QTY01" Composite="yes">
+								<subelement Sequence="1">11</subelement>
+								<subelement Sequence="2">24</subelement>
+							</element>
+						</segment>
+						<segment Id="DTM">
+							<element Id="DTM01" Composite="yes">
+								<subelement Sequence="1">2</subelement>
+								<subelement Sequence="2">20020915</subelement>
+								<subelement Sequence="3">102</subelement>
+							</element>
+						</segment>
+					</loop>
+					<loop Id="SG37">
+						<segment Id="LOC">
+							<element Id="LOC01">7</element>
+							<element Id="LOC02" Composite="yes">
+								<subelement Sequence="1">3312345501003</subelement>
+								<subelement Sequence="3">9</subelement>
+							</element>
+						</segment>
+						<segment Id="QTY">
+							<element Id="QTY01" Composite="yes">
+								<subelement Sequence="1">11</subelement>
+								<subelement Sequence="2">24</subelement>
+							</element>
+						</segment>
+						<segment Id="DTM">
+							<element Id="DTM01" Composite="yes">
+								<subelement Sequence="1">2</subelement>
+								<subelement Sequence="2">20020913</subelement>
+								<subelement Sequence="3">102</subelement>
+							</element>
+						</segment>
+					</loop>
+					<loop Id="SG38">
+						<segment Id="TAX">
+							<element Id="TAX01">7</element>
+							<element Id="TAX02">VAT</element>
+							<element Id="TAX05" Composite="yes">
+								<subelement Sequence="4">17.5</subelement>
+							</element>
+							<element Id="TAX06">S</element>
+						</segment>
+					</loop>
+				</loop>
+				<segment Id="UNS">
+					<element Id="UNS01">S</element>
+				</segment>
+				<segment Id="CNT">
+					<element Id="CNT01" Composite="yes">
+						<subelement Sequence="1">2</subelement>
+						<subelement Sequence="2">1</subelement>
+					</element>
+				</segment>					
+			</transaction>
+		</group>
+	</interchange>
+</ediroot>

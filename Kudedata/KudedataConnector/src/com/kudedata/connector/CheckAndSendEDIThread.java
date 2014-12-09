@@ -66,6 +66,8 @@ public class CheckAndSendEDIThread implements Runnable{
 	 * envía ficheros pendientes al middleware (encriptados usando ssl) para su procesamiento
 	 */
 	private void sendEDIToKudedataMiddleware(File fileName) {
+		KudedataConnector.createClient();
+		
 		InputStream fileInStream = null;
 		try {
 			fileInStream = new FileInputStream(fileName);
@@ -90,6 +92,8 @@ public class CheckAndSendEDIThread implements Runnable{
 			moveFileToAlreadySentFolder (fileName);
 			
 		}
+		response.close();
+		KudedataConnector.destroyClient();
 	}
 
 	private void moveFileToAlreadySentFolder(File sourceFile) {		
