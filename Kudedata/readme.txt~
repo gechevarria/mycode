@@ -1,4 +1,4 @@
-KUDEDATA contiene 4 proyectos:
+KUDEDATA contiene dos proyectos:
 
 KudedataConnector
 A desplegar en las máquinas en las que están los ERPS.
@@ -15,7 +15,3 @@ XSLTransformer
 En la nube.
 Transforma el fichero EDI a XML y después aplica XSLT generanco HTML leible por el usuario.
 Los ficheros html serán los que se carguen en Alfresco y los usuarios podrán leer y aprobar.
-
-alfrescoConnector
-sube los ficheros html generados al alfresco community trial version 5.0 via la api rest que ofrece.
-
