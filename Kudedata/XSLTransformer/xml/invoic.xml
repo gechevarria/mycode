@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ediroot>
+	<interchange Standard="EDIFACT-UNH">
+		<group>
+			<transaction Control="ME000001" DocType="INVOIC" Version="D"
+				Release="01B" Agency="UN" Association="EAN011">
+				<segment Id="BGM">
+					<element Id="BGM01">380</element>
+					<element Id="BGM02">IN432097</element>
+				</segment>
+				<segment Id="DTM">
+					<element Id="DTM01" Composite="yes">
+						<subelement Sequence="1">137</subelement>
+						<subelement Sequence="2">20020308</subelement>
+						<subelement Sequence="3">102</subelement>
+					</element>
+				</segment>
+				<segment Id="PAI">
+					<element Id="PAI01" Composite="yes">
+						<subelement Sequence="3">42</subelement>
+					</element>
+				</segment>
+				<segment Id="RFF">
+					<element Id="RFF01" Composite="yes">
+						<subelement Sequence="1">ON</subelement>
+						<subelement Sequence="2">ORD9523</subelement>
+					</element>
+				</segment>
+				<segment Id="DTM">
+					<element Id="DTM01" Composite="yes">
+						<subelement Sequence="1">171</subelement>
+						<subelement Sequence="2">20020212</subelement>
+						<subelement Sequence="3">102</subelement>
+					</element>
+				</segment>
+				<segment Id="RFF">
+					<element Id="RFF01" Composite="yes">
+						<subelement Sequence="1">PL</subelement>
+						<subelement Sequence="2">PL99523</subelement>
+					</element>
+				</segment>
+				<segment Id="DTM">
+					<element Id="DTM01" Composite="yes">
+						<subelement Sequence="1">171</subelement>
+						<subelement Sequence="2">20020101</subelement>
+						<subelement Sequence="3">102</subelement>
+					</element>
+				</segment>
+				<segment Id="RFF">
+					<element Id="RFF01" Composite="yes">
+						<subelement Sequence="1">DQ</subelement>
+						<subelement Sequence="2">53662</subelement>
+					</element>
+				</segment>
+				<segment Id="DTM">
+					<element Id="DTM01" Composite="yes">
+						<subelement Sequence="1">171</subelement>
+						<subelement Sequence="2">20020215</subelement>
+						<subelement Sequence="3">102</subelement>
+					</element>
+				</segment>
+				<segment Id="NAD">
+					<element Id="NAD01">BY</element>
+					<element Id="NAD02" Composite="yes">
+						<subelement Sequence="1">5412345000013</subelement>
+						<subelement Sequence="3">9</subelement>
+					</element>
+				</segment>
+				<segment Id="RFF">
+					<element Id="RFF01" Composite="yes">
+						<subelement Sequence="1">VA</subelement>
+						<subelement Sequence="2">4146023</subelement>
+					</element>
+				</segment>
+				<segment Id="NAD">
+					<element Id="NAD01">SU</element>
+					<element Id="NAD02" Composite="yes">
+						<subelement Sequence="1">4012345500004</subelement>
+						<subelement Sequence="3">9</subelement>
+					</element>
+				</segment>
+				<segment Id="RFF">
+					<element Id="RFF01" Composite="yes">
+						<subelement Sequence="1">VA</subelement>
+						<subelement Sequence="2">VR12345</subelement>
+					</element>
+				</segment>
+				<segment Id="NAD">
+					<element Id="NAD01">DP</element>
+					<element Id="NAD02" Composite="yes">
+						<subelement Sequence="1">5412345678908</subelement>
+						<subelement Sequence="3">9</subelement>
+					</element>
+				</segment>
+				<segment Id="CUX">
+					<element Id="CUX01" Composite="yes">
+						<subelement Sequence="1">2</subelement>
+						<subelement Sequence="2">EUR</subelement>
+						<subelement Sequence="3">4</subelement>
+					</element>
+				</segment>
+				<segment Id="PAT">
+					<element Id="PAT01">1</element>
+					<element Id="PAT03" Composite="yes">
+						<subelement Sequence="1">5</subelement>
+						<subelement Sequence="2">3</subelement>
+						<subelement Sequence="3">M</subelement>
+						<subelement Sequence="4">2</subelement>
+					</element>
+				</segment>
+				<segment Id="PAT">
+					<element Id="PAT01">22</element>
+					<element Id="PAT03" Composite="yes">
+						<subelement Sequence="1">5</subelement>
+						<subelement Sequence="2">3</subelement>
+						<subelement Sequence="3">D</subelement>
+						<subelement Sequence="4">10</subelement>
+					</element>
+				</segment>
+				<segment Id="PCD">
+					<element Id="PCD01" Composite="yes">
+						<subelement Sequence="1">12</subelement>
+						<subelement Sequence="2">2.5</subelement>
+						<subelement Sequence="3">13</subelement>
+					</element>
+				</segment>
+				<segment Id="ALC">
+					<element Id="ALC01">C</element>
+					<element Id="ALC03">6</element>
+					<element Id="ALC05">FC</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">23</subelement>
+						<subelement Sequence="2">120</subelement>
+					</element>
+				</segment>
+				<segment Id="TAX">
+					<element Id="TAX01">7</element>
+					<element Id="TAX02">VAT</element>
+					<element Id="TAX05" Composite="yes">
+						<subelement Sequence="4">19</subelement>
+					</element>
+					<element Id="TAX06">S</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">124</subelement>
+						<subelement Sequence="2">22.80</subelement>
+					</element>
+				</segment>
+				<segment Id="LIN">
+					<element Id="LIN01">1</element>
+					<element Id="LIN03" Composite="yes">
+						<subelement Sequence="1">4000862141404</subelement>
+						<subelement Sequence="2">SRV</subelement>
+					</element>
+				</segment>
+				<segment Id="QTY">
+					<element Id="QTY01" Composite="yes">
+						<subelement Sequence="1">47</subelement>
+						<subelement Sequence="2">40</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">203</subelement>
+						<subelement Sequence="2">2160</subelement>
+					</element>
+				</segment>
+				<segment Id="PRI">
+					<element Id="PRI01" Composite="yes">
+						<subelement Sequence="1">AAB</subelement>
+						<subelement Sequence="2">60</subelement>
+						<subelement Sequence="3">CA</subelement>
+					</element>
+				</segment>
+				<segment Id="TAX">
+					<element Id="TAX01">7</element>
+					<element Id="TAX02">VAT</element>
+					<element Id="TAX05" Composite="yes">
+						<subelement Sequence="4">21</subelement>
+					</element>
+					<element Id="TAX06">S</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">124</subelement>
+						<subelement Sequence="2">453.60</subelement>
+					</element>
+				</segment>
+				<segment Id="ALC">
+					<element Id="ALC01">A</element>
+				</segment>
+				<segment Id="PCD">
+					<element Id="PCD01" Composite="yes">
+						<subelement Sequence="1">1</subelement>
+						<subelement Sequence="2">10</subelement>
+					</element>
+				</segment>
+				<segment Id="LIN">
+					<element Id="LIN01">2</element>
+					<element Id="LIN03" Composite="yes">
+						<subelement Sequence="1">5412345111115</subelement>
+						<subelement Sequence="2">SRV</subelement>
+					</element>
+				</segment>
+				<segment Id="QTY">
+					<element Id="QTY01" Composite="yes">
+						<subelement Sequence="1">46</subelement>
+						<subelement Sequence="2">5</subelement>
+					</element>
+				</segment>
+				<segment Id="QTY">
+					<element Id="QTY01" Composite="yes">
+						<subelement Sequence="1">47</subelement>
+						<subelement Sequence="2">12.65</subelement>
+						<subelement Sequence="3">KGM</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">203</subelement>
+						<subelement Sequence="2">2530</subelement>
+					</element>
+				</segment>
+				<segment Id="PRI">
+					<element Id="PRI01" Composite="yes">
+						<subelement Sequence="1">AAA</subelement>
+						<subelement Sequence="2">200</subelement>
+						<subelement Sequence="3">CA</subelement>
+						<subelement Sequence="5">1</subelement>
+						<subelement Sequence="6">KGM</subelement>
+					</element>
+				</segment>
+				<segment Id="TAX">
+					<element Id="TAX01">7</element>
+					<element Id="TAX02">VAT</element>
+					<element Id="TAX05" Composite="yes">
+						<subelement Sequence="4">19</subelement>
+					</element>
+					<element Id="TAX06">S</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">124</subelement>
+						<subelement Sequence="2">480.70</subelement>
+					</element>
+				</segment>
+				<segment Id="UNS">
+					<element Id="UNS01">S</element>
+				</segment>
+				<segment Id="CNT">
+					<element Id="CNT01" Composite="yes">
+						<subelement Sequence="1">2</subelement>
+						<subelement Sequence="2">2</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">86</subelement>
+						<subelement Sequence="2">5767.10</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">79</subelement>
+						<subelement Sequence="2">4690</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">129</subelement>
+						<subelement Sequence="2">5767.10</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">125</subelement>
+						<subelement Sequence="2">4810</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">176</subelement>
+						<subelement Sequence="2">957.10</subelement>
+					</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">131</subelement>
+						<subelement Sequence="2">120</subelement>
+					</element>
+				</segment>
+				<segment Id="TAX">
+					<element Id="TAX01">7</element>
+					<element Id="TAX02">VAT</element>
+					<element Id="TAX05" Composite="yes">
+						<subelement Sequence="4">19</subelement>
+					</element>
+					<element Id="TAX06">S</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">124</subelement>
+						<subelement Sequence="2">503.50</subelement>
+					</element>
+				</segment>
+				<segment Id="TAX">
+					<element Id="TAX01">7</element>
+					<element Id="TAX02">VAT</element>
+					<element Id="TAX05" Composite="yes">
+						<subelement Sequence="4">21</subelement>
+					</element>
+					<element Id="TAX06">S</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">124</subelement>
+						<subelement Sequence="2">453.60</subelement>
+					</element>
+				</segment>
+				<segment Id="ALC">
+					<element Id="ALC01">C</element>
+					<element Id="ALC05">FC</element>
+				</segment>
+				<segment Id="MOA">
+					<element Id="MOA01" Composite="yes">
+						<subelement Sequence="1">131</subelement>
+						<subelement Sequence="2">120</subelement>
+					</element>
+				</segment>
+			</transaction>
+		</group>
+	</interchange>
+</ediroot>
