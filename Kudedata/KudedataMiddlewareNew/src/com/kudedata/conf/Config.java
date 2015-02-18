@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * clase que contiene una serie de propiedades est�ticas recuperadas de un fichero de configuraci�n.
  */
 public class Config {	
-	public static String VALIDATION_PENDING_RECEIVED_EDI_FOLDER = null;
+	public static String EDI_MESSAGES_FOLDER = null;
 	public static String PENDING_TO_BE_SENT_EDI_FILES = null;
 	public static String ALREADY_SENT_EDI_FILES = null;
 	public static final String ORDER_EDI_ID = "EAN008";
@@ -38,14 +38,11 @@ public class Config {
 		else
 			configPath = "/home/alfresco/workspace/KudedataMiddlewareNew/src/com/kudedata/conf/config-linux.properties";
 		try {
-		
-		//String configFilePath= "D:/Projects/KUDETADA/eclipse-standard-luna-R-win32-x86_64/workspace/KudedataMiddleware/src/com/kudedata/conf/config.properties";
+				
 		//se lee el fichero de propiedades 
 		input = new FileInputStream(configPath);	 			
 		prop.load(input);		
-		VALIDATION_PENDING_RECEIVED_EDI_FOLDER = prop.getProperty("VALIDATION_PENDIGN_RECEIVED_EDI_FOLDER");		
-		PENDING_TO_BE_SENT_EDI_FILES = prop.getProperty("PENDING_TO_BE_SENT_EDI_FILES");
-		ALREADY_SENT_EDI_FILES = prop.getProperty("ALREADY_SENT_EDI_FILES");
+		EDI_MESSAGES_FOLDER = prop.getProperty("EDI_MESSAGES_FOLDER");				
 		HTML_FILES_FOLDER = prop.getProperty("HTML_FILES_FOLDER");
 		
 		} catch (IOException ex) {

@@ -1,7 +1,14 @@
 package com.kudedata.connector;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.sun.jersey.api.client.ClientResponse;
 
 /**
  * @author 106800
@@ -18,7 +25,7 @@ public class CheckAndReceiveEDIThread implements Runnable{
 	@Override
     public void run() {
         while(true){
-        	//checkAndReceiveEDIMessages();
+        	checkAndReceiveEDIMessages();
         }
     }	
 	
@@ -26,10 +33,10 @@ public class CheckAndReceiveEDIThread implements Runnable{
 	 * 
 	 */
 	// funciona desde el navegador con https://localhost:8443/kudedata/message/webservice/checkAndSendEDIFile/EMP1
-	/*public void checkAndReceiveEDIMessages() {
+	public void checkAndReceiveEDIMessages() {
 		KudedataConnector.createClient();
 		
-	    ClientResponse response = KudedataConnector.webResource.path("webservice").path("checkAndSendEDIFile").path(Config.ENTERPRISEID).type("application/text")
+	    ClientResponse response = KudedataConnector.webResource.path("webservice").path("checkAndSendEDIFile").path(Config.ENTERPRISE_ID).type("application/text")
 	        .get(ClientResponse.class);
 	    
 	    byte[] buffer;
@@ -61,6 +68,6 @@ public class CheckAndReceiveEDIThread implements Runnable{
 		} catch (InterruptedException e) {
 			LOGGER.info("Se ha producido un error al recibir la respuesta del servidor."+e.getLocalizedMessage());
 		}
-	}*/
+	}
 
 }

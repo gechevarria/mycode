@@ -42,8 +42,8 @@ public class KudedataProxy {
 			throws Throwable {
 	log.info("KUDEDATA-TRAZA.receiveEDIFile1");	
 	String strResponse ="ok";
-	log.info("KUDEDATA-TRAZA.receiveEDIFile2 "+Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER);
-	if (Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER==null)
+	log.info("KUDEDATA-TRAZA.receiveEDIFile2 "+Config.EDI_MESSAGES_FOLDER);
+	if (Config.EDI_MESSAGES_FOLDER==null)
 		Config.init();
 	
 	InputStream EDIfileInputStream = a_fileInputStream;
@@ -51,9 +51,11 @@ public class KudedataProxy {
 	if (a_fileInputStream==null)
 		log.info("KUDEDATA-TRAZA.receiveEDIFile1 a_fileInputStream es null");
 	
-	File htmlFileToUpload = copyEDIReceivedFileToPendingTransactionsFolder(idEmpresaOrigen,ediType, EDIfileInputStream);
+	String transactionId = new Long(System.currentTimeMillis()).toString();
 	
-	AlfrescoConnector.uploadFile(htmlFileToUpload,idEmpresaDestinataria);	
+	File htmlFileToUpload = copyEDIReceivedFileToPendingTransactionsFolder(idEmpresaOrigen,ediType, EDIfileInputStream,transactionId);
+	
+	AlfrescoConnector.uploadFile(htmlFileToUpload,idEmpresaDestinataria,transactionId);	
 	
 	return (strResponse);
 
@@ -86,16 +88,18 @@ public class KudedataProxy {
 	 * copia el fichero EDI recibido a la carpeta de la empresa correspondiente, adem�s de esto crea un xml con los datos del fichero EDI
 	 * y a partir de este y mediante el uso de xsl genera un html leible por el usuario con los datos m�s relevantes de la transacci�n con el 
 	 * objetivo de que se conozca el contenido de la transacci�n especialmente para aquellos casos en los que es necesaria una aprobaci�n manual
+	 * @param transactionId 
 	 * @return 
 	 */
 	private File copyEDIReceivedFileToPendingTransactionsFolder(
-			String idEmpresa, String ediType, InputStream EDIfileInputStream) {
+			String idEmpresa, String ediType, InputStream EDIfileInputStream, String transactionId) {
 		File ediInHtmlFormatFile = null;
 		OutputStream outputStream = null;
-		String fileName = "ediTransaction_"+idEmpresa+"_"+System.currentTimeMillis()+".edi";
+		
+		String fileName = "ediTransaction_"+idEmpresa+"_"+transactionId+".edi";
 		try {
 			outputStream = new FileOutputStream(new File(
-					Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER+File.separator+idEmpresa+File.separator+fileName));
+					Config.EDI_MESSAGES_FOLDER+File.separator+idEmpresa+File.separator+fileName));
 		
 		int read = 0;
 		
@@ -106,8 +110,10 @@ public class KudedataProxy {
 		}
 		
 		outputStream.close();
+		log.info("KudedataProxy.copyEDIReceivedFileToPendingTransactionsFolder1 el fichero edi se ha copiado correctamente");
 		//ediInHtmlFormatFile = generateXMLANDHtmlFromEDIFIle (Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER+File.separator+idEmpresa+File.separator+fileName, idEmpresa);
 		ediInHtmlFormatFile = generateHTMLToUpload (ediType);
+		log.info("KudedataProxy.copyEDIReceivedFileToPendingTransactionsFolder2 el fichero html se ha copiado correctamente "+ediInHtmlFormatFile.getAbsolutePath());
 		return(ediInHtmlFormatFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -122,7 +128,7 @@ public class KudedataProxy {
 	
 		switch (ediType) {
 		case Config.ORDER_EDI_ID:
-			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"order.html");
+			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"order.html");			
 			break;
 		case Config.INVOIC_EDI_ID:
 			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"invoic.html");
@@ -136,6 +142,7 @@ public class KudedataProxy {
 		default:
 			break;
 		}
+				
 		return htmlFile;
 	}
 

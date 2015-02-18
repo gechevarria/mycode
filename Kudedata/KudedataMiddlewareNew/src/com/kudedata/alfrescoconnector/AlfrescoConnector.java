@@ -19,13 +19,26 @@ import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.kudedata.conf.Config;
 import com.kudedata.rest.KudedataProxy;
 
 public class AlfrescoConnector {
 	static Log log = LogFactory.getLog(KudedataProxy.class);
 	
-	public static void uploadFile(File fileToUpload, String idDestinatario) throws HttpException, IOException {
+	public static void main(String[] args) {
+		try {
+			File fileToUpload = new File ("/home/alfresco/KUDEDATA/DESARROLLO_NEW/MIDDLEWARE/TRANSFORMATIONS/HTML/order.html");
+			String idDestinatario = "UKABI";
+			//uploadFile(fileToUpload,idDestinatario);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	
+	
+	public static void uploadFile(File fileToUpload, String idDestinatario, String transactionId) throws HttpException, IOException {
 		
 		String accessingTicket = "";
 		accessingTicket = getTicket(idDestinatario);
@@ -37,8 +50,9 @@ public class AlfrescoConnector {
 		
 
 		String filetype = "text/html";
-
-		String filename = fileToUpload.getName();
+		
+		String filename = fileToUpload.getName().replace(".html", transactionId+".html");
+				
 		log.info("KUDEDATA-TRAZA.uploadFile2 filename="+filename);
 		PostMethod mPost = new PostMethod(url);
 		
@@ -60,18 +74,20 @@ public class AlfrescoConnector {
 		int statusCode1 = client.executeMethod(mPost);
 
 	}
+	
+	 
 
 	private static String getTicket(String idDestinatario) {
 		
 		String password = "KUDEDATA";
 		
-		/*String name = "admin";
-		String password = "admin";*/
-
+		/*idDestinatario = "admin";
+		String password  = "admin";
+		*/
 		// First we need to pre-auth and get an authentication ticket
 		//String authURL = "http://localhost:8080/alfresco/service/api/login?u=admin&pw=admin";
 		String authURL = "http://localhost:8080/alfresco/service/api/login?u="+idDestinatario+"&pw="+password;
-
+		log.info("La url para obtener el ticket es "+authURL);
 		ByteArrayOutputStream bais = null;
 		InputStream is = null;
 		byte[] xmlTicketByteArray = null;
