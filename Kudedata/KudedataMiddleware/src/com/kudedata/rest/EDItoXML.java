@@ -119,6 +119,7 @@ public class EDItoXML {
 			// Call the XSL Transformer with no stylesheet to generate
 			// XML output from the parsed input.
 			transformer.transform(source, result);
+			generatedOutput.close();
 			System.out.print("/nTransformation complete/n");
 		} catch (SAXException e) {
 			System.out.println("/nUnable to create EDIReader: " + e);
@@ -128,9 +129,11 @@ public class EDItoXML {
 			System.out.println("/nUnable to create Transformer: " + e);
 		} catch (TransformerException e) {
 			System.out.println("/nFailure to transform: " + e);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
-
 
 	/**
 	 *  Main for EDItoXML.
@@ -139,33 +142,12 @@ public class EDItoXML {
 	 */
 	public static void main(String args[]) {
 		String outputFileName = null;
-		String inputFileName = null;
-		/*for (int i = 0; i < args.length; i++) {
-			if (args[i].equals("-o")) {
-				// -o filename
-				if ((++i) >= args.length) {
-					badArgs();
-				}
-				outputFileName = args[i];
-			} else {
-				inputFileName = args[i];
-			}
-		}*/
+		String inputFileName = null;		
 		inputFileName = "D:/Projects/KUDETADA/eclipse-standard-luna-R-win32-x86_64/workspace/EDIReaderTest/testingfiles/orders_example.edi";
 		outputFileName = "D:/Projects/KUDETADA/eclipse-standard-luna-R-win32-x86_64/workspace/EDIReaderTest/testingfiles/orders_example.xml";
 
 		EDItoXML theObject = new EDItoXML(inputFileName, outputFileName);
 		theObject.run();
-	}
-
-
-	/**
-	 *  Print summary of command line arguments expected.
-	 */
-	private static void badArgs() {
-		System.out.println(
-				"Usage: EDItoXML [-o outputfile] [inputfile]");
-		System.exit(1);
 	}
 
 }

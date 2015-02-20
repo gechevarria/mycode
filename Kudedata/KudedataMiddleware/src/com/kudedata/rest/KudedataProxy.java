@@ -1,6 +1,7 @@
 package com.kudedata.rest;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,107 +17,247 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.kudedata.alfrescoconnector.AlfrescoConnector;
 import com.kudedata.conf.Config;
+import com.kudedata.aux.FilterFile;
 
 @Path("/webservice")
 public class KudedataProxy {
+	static Log log = LogFactory.getLog(KudedataProxy.class);
 
+	/** recibe un fichero edi encriptado y lo sube a alfresco
+	 * @param a_request
+	 * @param idEmpresaOrigen
+	 * @param idEmpresaDestinataria
+	 * @param ediType
+	 * @param a_fileInputStream
+	 * @return
+	 * @throws Throwable
+	 */
 	@POST
-	@Path("/receiveEDI/{idEmpresa}")
+	@Path("/receiveEDI/{idEmpresaOrigen}/{idEmpresaDestinataria}/{ediType}")
 	@Consumes("application/octet-stream")
 	@Produces("text/plain")
 	public String receiveEDIFile(@Context HttpServletRequest a_request,
-			@PathParam("idEmpresa") String idEmpresa, InputStream a_fileInputStream)
-			throws Throwable {		
-	String strResponse ="ok";
-	if (Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER==null)
+			@PathParam("idEmpresaOrigen") String idEmpresaOrigen,@PathParam("idEmpresaDestinataria") String idEmpresaDestinataria, @PathParam("ediType") String ediType, InputStream a_fileInputStream)
+			throws Throwable {	
+	String strResponse ="ok";	
+	if (Config.EDI_MESSAGES_FOLDER==null)
 		Config.init();
-		
+	
 	InputStream EDIfileInputStream = a_fileInputStream;
 	
-	copyEDIReceivedFileToPendingTransactionsFolder(idEmpresa,EDIfileInputStream);			
+	if (a_fileInputStream==null)
+		log.info("KUDEDATA-TRAZA.receiveEDIFile1 a_fileInputStream es null");
+	
+	String transactionId = new Long(System.currentTimeMillis()).toString();
+	
+	File htmlFileToUpload = copyEDIReceivedFileToPendingTransactionsFolder(idEmpresaOrigen,idEmpresaDestinataria,ediType, EDIfileInputStream,transactionId);
+	
+	AlfrescoConnector.uploadFile(htmlFileToUpload,idEmpresaOrigen,idEmpresaDestinataria,transactionId);	
 	
 	return (strResponse);
 
 	}
 	
+	public static void main (String[] args){
+		Config.init();
+		String idEmpresa="CAMEPACK";
+		String fileName="desadv_UKABI-CAMEPACK_1424345501064.html";
+		//getEDIFileFromPendigToBeProcesedFolder(fileName);
+	}
+
 	/**
 	 * @return
-	 * servicio que comprueba si hay mensajes EDI pendientes para enviar a una determinada empresa y en caso de que los haya los envía (todos)
+	 * servicio que comprueba si hay mensajes EDI pendientes para enviar a una determinada empresa y en caso de que los haya los envï¿½a (todos)
 	 */  
 	@GET
 	@Path("/checkAndSendEDIFile/{idEmpresa}")
 	@Produces("text/plain")
 	public Response getFile(@PathParam("idEmpresa") String idEmpresa) {
-		if (Config.PENDING_TO_BE_SENT_EDI_FILES==null)
+		if (Config.EDI_MESSAGES_FOLDER==null)
 			Config.init();
-	    File file = new File(Config.PENDING_TO_BE_SENT_EDI_FILES+File.separator+idEmpresa+File.separator+"ediTransaction.edi");
-	    ResponseBuilder response = Response.ok((Object) file);
+		ResponseBuilder response = Response.noContent();
+		String fileName = AlfrescoConnector.checkIfPendingTransactions(idEmpresa);		
+		if (fileName==""){			
+			return response.build();
+		}
+		File ediFileFromPendigToBeProcesedFolder = getEDIFileFromPendigToBeProcesedFolder (fileName);		
+		if (ediFileFromPendigToBeProcesedFolder==null){			
+			return response.build();
+		}	   	
+	    response = Response.ok((Object) ediFileFromPendigToBeProcesedFolder);
+	    
 	    response.header("Content-Disposition",
-	        "attachment; filename=ediTransaction.edi");
+	        "attachment; filename="+ediFileFromPendigToBeProcesedFolder.getName());
 	    return response.build();
 
 	}
+		
+	/**
+	 * Moves edi file to the alreadyprocessed Folder
+	 * @param ediFileFromPendigToBeProcesedFolder
+	 */
+	private void moveEdiFileToAlreadyProcessedFolder(
+			File ediFileFromPendigToBeProcesedFolder) {
+		InputStream inStream = null;
+		OutputStream outStream = null;
+	 
+	    	try{
+	 	    	    
+	    	    File bfile =new File(Config.ALREADY_SENT_EDI_MESSAGES_FOLDER+File.separator+ediFileFromPendigToBeProcesedFolder.getName());
+	 
+	    	    inStream = new FileInputStream(ediFileFromPendigToBeProcesedFolder);
+	    	    outStream = new FileOutputStream(bfile);
+	 
+	    	    byte[] buffer = new byte[1024];
+	 
+	    	    int length;
+	    	    //copy the file content in bytes 
+	    	    while ((length = inStream.read(buffer)) > 0){
+	 
+	    	    	outStream.write(buffer, 0, length);
+	 
+	    	    }
+	 
+	    	    inStream.close();
+	    	    outStream.close();	 
+	    	    //delete the original file
+	    	    ediFileFromPendigToBeProcesedFolder.delete();	    	    
+	 
+	    	}catch(IOException e){
+	    	    e.printStackTrace();
+	    	}
+	    }
 
-	/*@GET
-	@Path("/checkAndSendEDIFile/{idEmpresa}")
-	@Produces("text/plain")
-	public File getFile2() {
-	    File file = new File(Config.VALIDATION_PENDIGN_RECEIVED_EDI_FOLDER+File.separator+"ediTransaction_EMP1_1416489741667.edi");
-	    ResponseBuilder response = Response.ok((Object) file);
-	    response.header("Content-Disposition",
-	        "attachment; filename=newfile.zip");
-	    return file;
-
+	/**
+	 * busca y devuelve el fichero edi
+	 * @param idEmpresa
+	 * @param fileName
+	 * @return
+	 */
+	private File getEDIFileFromPendigToBeProcesedFolder(String fileName) {
+		File ediFile = null;		
+		String idEmpresaOrigen = fileName.substring(fileName.indexOf("_")+1, fileName.lastIndexOf("-"));
+		String searchPath = Config.EDI_MESSAGES_FOLDER+System.getProperty("file.separator")+idEmpresaOrigen;				
+		File ediFilesFolder = new File (searchPath);
+		if (!ediFilesFolder.exists() || !ediFilesFolder.isDirectory())
+				return ediFile;
+		String transactionId = fileName.substring(fileName.lastIndexOf("_")+1, fileName.indexOf("."));
+		
+		File[] files = ediFilesFolder.listFiles(new FilterFile(transactionId) );
+		if (files!=null)
+			ediFile=files[0];
+		
+		return ediFile;
 	}
-*/
-	
+
 	/**
 	 * @param idEmpresa
+	 * @param ediType 
 	 * @param EDIfileInputStream
-	 * copia el fichero EDI recibido a la carpeta de la empresa correspondiente, además de esto crea un xml con los datos del fichero EDI
-	 * y a partir de este y mediante el uso de xsl genera un html leible por el usuario con los datos más relevantes de la transacción con el 
-	 * objetivo de que se conozca el contenido de la transacción especialmente para aquellos casos en los que es necesaria una aprobación manual
+	 * copia el fichero EDI recibido a la carpeta de la empresa correspondiente, ademï¿½s de esto crea un xml con los datos del fichero EDI
+	 * y a partir de este y mediante el uso de xsl genera un html leible por el usuario con los datos mï¿½s relevantes de la transacciï¿½n con el 
+	 * objetivo de que se conozca el contenido de la transacciï¿½n especialmente para aquellos casos en los que es necesaria una aprobaciï¿½n manual
+	 * @param transactionId 
+	 * @return 
 	 */
-	private void copyEDIReceivedFileToPendingTransactionsFolder(
-			String idEmpresa, InputStream EDIfileInputStream) {
+	private File copyEDIReceivedFileToPendingTransactionsFolder(
+			String idEmpresaOrigen, String idEmpresaDestinataria, String ediType, InputStream EDIfileInputStream, String transactionId) {
+		File ediInHtmlFormatFile = null;
 		OutputStream outputStream = null;
 		
-		String fileName = "ediTransaction_"+idEmpresa+"_"+System.currentTimeMillis()+".edi";
-		
-		// write the inputStream to a FileOutputStream
+		String fileName = ediType+"-"+idEmpresaOrigen+"-"+idEmpresaDestinataria+"_"+transactionId+".edi";
 		try {
 			outputStream = new FileOutputStream(new File(
-					Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER+File.separator+idEmpresa+File.separator+fileName));
+					Config.EDI_MESSAGES_FOLDER+File.separator+idEmpresaOrigen+File.separator+fileName));
 		
-
 		int read = 0;
+		
 		byte[] bytes = new byte[1024];
 		
 		while ((read = EDIfileInputStream.read(bytes)) != -1) {
 			outputStream.write(bytes, 0, read);
-		}
-		
-		outputStream.close();
-		generateXMLANDHtmlFromEDIFIle (Config.VALIDATION_PENDING_RECEIVED_EDI_FOLDER+File.separator+idEmpresa+File.separator+fileName, idEmpresa);
+		}		
+		outputStream.close();			
+		ediInHtmlFormatFile = generateHTMLToUpload (ediType);		
+		return(ediInHtmlFormatFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return ediInHtmlFormatFile;
 		
 	}
 
-	/** Método que crea un xml (paso intermedio) y un html a partir del fichero edi y los almacena en la misma carpeta 
+	private File generateHTMLToUpload(String ediType) {
+		File htmlFile = null; 
+	
+		switch (ediType) {
+		case Config.ORDER_EDI_ID:
+			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"order.html");			
+			break;
+		case Config.INVOIC_EDI_ID:
+			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"invoic.html");
+			break;
+		case Config.RECADV_EDI_ID:
+			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"recadv.html");
+			break;
+		case Config.DESADV_EDI_ID:
+			htmlFile = new File (Config.HTML_FILES_FOLDER+System.getProperty("file.separator")+"desadv.html");
+			break;
+		default:
+			break;
+		}
+				
+		return htmlFile;
+	}
+
+
+	/** Mï¿½todo que crea un xml (paso intermedio) y un html a partir del fichero edi y los almacena en la misma carpeta 
 	 * @param completeEDIFileName
 	 * @param idEmpresa
+	 * @return 
 	 */
-	private void generateXMLANDHtmlFromEDIFIle(String completeEDIFileName, String idEmpresa) {
+	private synchronized File generateXMLANDHtmlFromEDIFIle(String completeEDIFileName, String idEmpresa) {
+		File ediInHtmlFormatFile = null;		
 		String completeXMLFilename = completeEDIFileName.replace(".edi", ".xml");
-		String completeHTMLFilename = completeEDIFileName.replace(".edi", ".html");;
-		EDItoXML eDItoXML = new EDItoXML(completeEDIFileName, completeXMLFilename);
-		eDItoXML.run();
+				
+		String completeHTMLFilename = "/home/cloudlab/KUDEDATA/DESARROLLO/MIDDLEWARE/VALIDATION_PENDIGN_RECEIVED_EDI_FOLDER/EMP1/order.html";
+		EDItoXML eDItoXML = new EDItoXML(completeEDIFileName, completeXMLFilename);		
+		eDItoXML.run();		
+		TransformerFactory factory = TransformerFactory.newInstance();		
+        Source xslt = new StreamSource(new File("/home/cloudlab/KUDEDATA/DESARROLLO/MIDDLEWARE/TRANSFORMATIONS/EMP1/XSLT/orders.xslt"));               
+        Transformer transformer = null;        
+		try {
+			transformer = factory.newTransformer(xslt);
+			if (transformer==null)
+				log.info("KUDEDATA-TRAZA.generateXMLANDHtmlFromEDIFIle transformer es null");					
+			Source text = new StreamSource(new File(completeXMLFilename));			
+			if (text.equals(null))
+				log.info("KUDEDATA-TRAZA.generateXMLANDHtmlFromEDIFIle text es null");
+			ediInHtmlFormatFile = new File(completeHTMLFilename);						
+			transformer.transform(text, new StreamResult(ediInHtmlFormatFile));				        
+			ediInHtmlFormatFile = new File(completeHTMLFilename);
+		} catch (TransformerException e) {
+			log.info(e.getMessage());
+			e.printStackTrace();
+		}
+		if (ediInHtmlFormatFile==null)
+			log.info("KUDEDATA-TRAZA.generateXMLANDHtmlFromEDIFIle.10 ediInHtmlFormatFile es nulo");
+					
+		return ediInHtmlFormatFile;
 		
 	};
-
+	
 }

@@ -1,8 +1,10 @@
 package com.kudedata.connector;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.CopyOption;
@@ -19,7 +21,7 @@ import com.sun.jersey.api.client.ClientResponse;
 
 /**
  * @author 106800
- * comprueba si hay mensajes EDI pendientes de envío consultando en la carpeta correspondiente y si es así llama al servicio ofrecido por el middleware kudedata para enviarlos
+ * comprueba si hay mensajes EDI pendientes de envï¿½o consultando en la carpeta correspondiente y si es asï¿½ llama al servicio ofrecido por el middleware kudedata para enviarlos
  */
 public class CheckAndSendEDIThread implements Runnable{
 	
@@ -36,15 +38,15 @@ public class CheckAndSendEDIThread implements Runnable{
     }
 
 	/**
-	 * lee el directorio para ver si hay ficheros EDI pendientes de envío
+	 * lee el directorio para ver si hay ficheros EDI pendientes de envï¿½o
 	 */
 	private void checkIfThereAreEDIMessages() {
-		String sDirectorio = KudedataConnector.EDITOSENDFOLDER;
+		String sDirectorio = Config.EDI_TOSEND_FOLDER;
 		File f = new File(sDirectorio);
 		if (f.exists()){ 
 			File[] ficheros = f.listFiles();
 			for (int x=0;x<ficheros.length;x++){
-			  //los ficheros tendrán el formato "nombreFichero.edi"
+			  //los ficheros tendrï¿½n el formato "nombreFichero.edi"
 			  if (ficheros[x].getName().contains(".edi")){
 				sendEDIToKudedataMiddleware(ficheros[x]);  
 			  }
@@ -54,7 +56,7 @@ public class CheckAndSendEDIThread implements Runnable{
 			LOGGER.info("El directorio "+sDirectorio+ " no existe !!");
 		}
 		try {
-			Thread.sleep(KudedataConnector.CHECKTOSENDTIMEOUTINMILLISECONDS);
+			Thread.sleep(Config.CHECK_TOSEND_TIMEOUT_IN_MILLISECONDS);
 		} catch (InterruptedException e) {
 			LOGGER.info("Se ha producido un error al recibir la respuesta del servidor."+e.getLocalizedMessage());
 		}
@@ -63,21 +65,28 @@ public class CheckAndSendEDIThread implements Runnable{
 
 	/**
 	 * @param file
-	 * envía ficheros pendientes al middleware (encriptados usando ssl) para su procesamiento
+	 * envï¿½a ficheros pendientes al middleware (encriptados usando ssl) para su procesamiento
 	 */
-	private void sendEDIToKudedataMiddleware(File fileName) {
+	private void sendEDIToKudedataMiddleware(File ediFile) {
 		KudedataConnector.createClient();
+		String fileName = ediFile.getName();
+		String EDIFileType = "";
+		String idEmpresaDestinataria = "";
+		
+		
+		EDIFileType = geteditYPE(ediFile);
+		idEmpresaDestinataria = fileName.substring(fileName.indexOf("-")+1, fileName.indexOf("."));
 		
 		InputStream fileInStream = null;
 		try {
-			fileInStream = new FileInputStream(fileName);
+			fileInStream = new FileInputStream(ediFile);
 		} catch (FileNotFoundException e1) {
-			LOGGER.info("El fichero EDI"+fileName+ " no existe !!");
+			LOGGER.info("El fichero EDI "+fileName+ " no existe !!");
 		}
-		String sContentDisposition = "attachment; filename=\"" + fileName.getName()
+		String sContentDisposition = "attachment; filename=\"" + fileName
 				+ "\"";
-		//invocación al servicio rest que recibe el fichero edi pasándole además como parámetro el identificativo de la empresa
-		ClientResponse response = KudedataConnector.webResource.path("webservice").path("receiveEDI").path(KudedataConnector.ENTERPRISEID)
+		//invocaciï¿½n al servicio rest que recibe el fichero edi pasï¿½ndole ademï¿½s como parï¿½metro el identificativo de la empresa y el tipo de mensaje EDI
+		ClientResponse response = KudedataConnector.webResource.path("webservice").path("receiveEDI").path(Config.ENTERPRISE_ID).path(idEmpresaDestinataria).path(EDIFileType)
 				.type(MediaType.APPLICATION_OCTET_STREAM)
 				.header("Content-Disposition", sContentDisposition)
 				.post(ClientResponse.class, fileInStream);
@@ -89,18 +98,19 @@ public class CheckAndSendEDIThread implements Runnable{
 		//Si la respuesta es "ok", el mensaje ha llegado al servidor y se ha almacenado, por lo que se pasa el fichero a la carpeta de enviados
 		LOGGER.info(response.toString());
 		if (response.toString().contains("OK")){
-			moveFileToAlreadySentFolder (fileName);
+			moveFileToAlreadySentFolder (ediFile);
 			
 		}
 		response.close();
 		KudedataConnector.destroyClient();
 	}
 
+	/** sobreescribir el fichero de destino, si existe, y copiar los atributos, incluyendo los permisos rwx
+	 * @param sourceFile
+	 */
 	private void moveFileToAlreadySentFolder(File sourceFile) {		
 		Path FROM = Paths.get(sourceFile.toURI());		
-        Path TO = Paths.get(KudedataConnector.EDIALREADYSENTFOLDER+File.separator+sourceFile.getName());
-        //sobreescribir el fichero de destino, si existe, y copiar
-        // los atributos, incluyendo los permisos rwx
+        Path TO = Paths.get(Config.EDI_ALREADY_SENT_FOLDER+File.separator+sourceFile.getName());
         CopyOption[] options = new CopyOption[]{
           StandardCopyOption.REPLACE_EXISTING,
           StandardCopyOption.COPY_ATTRIBUTES          
@@ -114,6 +124,32 @@ public class CheckAndSendEDIThread implements Runnable{
 		}		
 	}
 
-	
+	/**
+	 * Obtiene el tipo de mensaje EDI que se procesa
+	 * 
+	 * @param ediFile
+	 * @return
+	 */
+	private static String geteditYPE(File ediFile) {		
+		String ediType = "";
+		FileReader namereader = null;
+		try {
+			namereader = new FileReader(ediFile.getAbsolutePath());
+			BufferedReader in = new BufferedReader(namereader);
+			String readLine = in.readLine();
+			ediType = readLine.substring(readLine.length() - 7,
+					readLine.length() - 1);
+			in.close();
+			namereader.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+
+		return ediType;
+	}
 
 }
