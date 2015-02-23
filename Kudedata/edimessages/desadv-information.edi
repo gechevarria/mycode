@@ -1,0 +1,40 @@
+UNH+ME000001+DESADV:D:01B:UN:EAN007'	Message header
+BGM+351+DES587441+9'	Despatch advice number DES587441
+DTM+137:20020401:102'	Message date 1st April 2002
+DTM+11:20020403:102'	Despatch date 3rd April 2002
+DTM+358:20020403:102'	Due date to arrive on or after the 3rd of April
+RFF+ON:12332'	Consignment is related to order number 12332
+DTM+171:20020325:102'	Date of order 25th of March 2002
+NAD+SU+5411234512309::9'	Supplier identified by GLN 5411234512309
+RFF+VA:6558774'	Supplier’s VAT number 6558774
+NAD+BY+5412345000013::9'	Buyer identified by GLN 5412345000013
+RFF+VA:7002474'	Buyer’s VAT number 7002474
+NAD+DP+5412345123453::9'	Delivery party identified by GLN 5412345123453
+RFF+VA:800800'	Delivery party VAT number 800800
+NAD+SH+5412345000105::9'	Shipper identified by GLN 5412345000105
+CPS+1'	First level description of consignment packing
+PAC+2++201::9'	Two ISO 1 pallets
+CPS+2+1'	Second level description of the first pallet
+PAC+1++201::9'	One ISO 1 pallet
+MEA+PD+AAB+KGM:263.2'	Pallet weight 263.2 Kilos including goods packages
+MEA+PD+WD+MMT:800’	Pallet width 800 millimetres
+MEA+PD+LN+MMT:1200’	Pallet length 1200 millimetres
+PCI+33E'	Pallet marked with SSCC
+GIN+BJ+354107380000001051'	Serial Shipping Container Code 354107380000001051
+PAC+20++CT'	Twenty cartons
+LIN+1++5410738000152:SRV'	Product contained in this package is identified by GTIN 5410738000152
+QTY+12:20'	Despatch quantity 20
+CPS+3+1'	Second level description of the second pallet
+PAC+1++201::9'	One ISO 1 pallet
+MEA+PD+AAB+KGM:305.1'	Pallet weight 305.1 Kilos
+PCI+33E'	Pallet marked with SSCC
+GIN+BJ+354107380000001068'	Serial Shipping Container Code 354107380000001068
+PAC+20++CT'	Twenty cartons
+LIN+2++5410738000169:SRV'	First product contained in this package is identified by the GTIN 5410738000169
+QTY+12:5'	Despatch quantity 5
+LIN+3++5410738000176:SRV'	Second product contained in this package is identified by the GTIN 5410738000176
+QTY+12:3'	Despatch quantity 3
+LIN+4++5410738000183:SRV'	Third product contained in this package is identified by the GTIN 5410738000183
+QTY+12:12'	Despatch quantity 12
+CNT+2:4'	Total number of LIN segments in the message = 4
+UNT+40+ME000001'	Total number of segments in the message equals 40

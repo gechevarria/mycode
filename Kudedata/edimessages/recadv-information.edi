@@ -1,0 +1,13 @@
+UNH+ME000001+RECADV:D:01B:UN:EAN005'	Message header
+BGM+632+REC5488+29'	Receiving advice number REC5488
+DTM+137:20020311:102'	Message date 11th of March 2002
+DTM+50:20020225:102'	Goods receipt date 25th of February 2002
+RFF+AAK:DA45601'	Receipt relates to despatch advice number DA45601
+DTM+171:20020225:102'	Despatch advice date 25th of February 2002
+RFF+ON:PO12345'	Receipt relates to buyer’s order number PO12345
+DTM+171:20020220:102'	Order date 20th of February 2002
+NAD+BY+5412345000013::9'	Buyer identified by GLN 5412345000013
+RFF+VA:1452216'	Buyer’s VAT number 1452216
+NAD+SU+5410738100005::9'	Supplier identified by GLN 5410738100005
+RFF+VA:5448776'	Supplier’s VAT number 5448776
+UNT+13+ME000001'	Total number of segments in the message equals 13

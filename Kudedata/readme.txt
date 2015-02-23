@@ -2,14 +2,14 @@ KUDEDATA contiene 4 proyectos:
 
 KudedataConnector
 A desplegar en las máquinas en las que están los ERPS.
-Lee continuamente ficheros EDI y los envía al middleware para ser procesados (encriptados sobre https)
+Lee continuamente ficheros EDI y los envía al middleware para ser procesados cifrado sobre https.
+También comprueba periodicamente si hay mensajes para la empresa en curso mediante la invocación a un servicio rest.
+
 
 KudedataMiddleware
 A desplegar en la nube.
 Servicio que recibe ficheros EDI y los almacena para ser procesados.
-A partir de aquí habrá dos posibilidades:
-	- Que las transacciones EDI se ejecuten directamente
-	- Que las transacciones EDI tengan que ser validadas a través de la extranet.
+
 
 XSLTransformer
 En la nube.
