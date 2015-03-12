@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Compras realizadas</title>
+<link rel="stylesheet" type="text/css" href="css/tickcloud.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+	$('#example').DataTable();
+} );
+</script>
+</head>
+<body>
+	<div id="form_wrapper" class="form_wrapper" style="width: 550px">	
+	<div id="content_head" class="content_head">
+		<h3>Compras realizadas</h3>
+	</div>
+	<form id="register" class="register" autocomplete="on">		
+		<div id="content" class="content">			
+			<table id="example" class="display">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Artículo</th>
+                <th>Establecimiento</th>
+                <th>Importe</th>
+                <th>Devuelto</th>
+            </tr>
+        </thead>
+ <!--
+  <tr>
+                <th>Fecha</th>
+                <th>Artículo</th>
+                <th>Establecimiento</th>
+                <th>Importe</th>
+                <th>Devolucion</th>               
+            </tr> 
+  -->
+        <tfoot>
+            <tr>
+                <th>Fecha</th>
+                <th>Artículo</th>
+                <th>Establecimiento</th>
+                <th>Importe</th>
+                <th>Devuelto</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr>
+            	<td data-order="1303686000">25-04-11</td>
+                <td>Camiseta Levi's</td>
+                <td data-search="El Corte Inglés">C.Ingles</td>
+                <td>12,6</td>
+                <td>No</td>                               
+            </tr>
+            <tr>
+            	<td data-order="1311548400">25-07-11</td>
+                <td>Disco duro</td>
+                <td data-search="Media Markt S.A">M.Markt</td>
+                <td>60</td>
+                <td>Si</td>                               
+            </tr>
+            <tr>
+            	<td data-order="1231718400">12-01-09</td>
+                <td>Camisa blanca</td>
+                <td data-search="Zara">Zara</td>
+                <td>20</td>
+                <td>No</td>                                
+            </tr>
+            <tr>
+            	<td data-order="1332975600">29-03-12</td>
+                <td>Reloj casio</td>
+                <td data-search="Joyería Martinez">J.Martinez</td>
+                <td>95,50</td>
+                <td>No</td>                                
+            </tr>
+            </tbody>
+    </table>
+		</div>		
+		
+		<div class="content_foot" style="width: 550px">
+			<div class="remember">
+				
+			</div>
+			<div class="remember" style="float: left;margin-left: 5%;">
+				
+			</div>
+			<div>
+				 <a href="javascript:window.close();" rel="register">Salir</a>
+			</div>						
+		</div>
+	</form>
+</div>
+</body>
+</html>
