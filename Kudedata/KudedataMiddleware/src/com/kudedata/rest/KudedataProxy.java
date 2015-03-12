@@ -29,7 +29,7 @@ import org.apache.commons.logging.LogFactory;
 
 import com.kudedata.alfrescoconnector.AlfrescoConnector;
 import com.kudedata.conf.Config;
-import com.kudedata.aux.FilterFile;
+import com.kudedata.fact.FilterFile;
 
 @Path("/webservice")
 public class KudedataProxy {
