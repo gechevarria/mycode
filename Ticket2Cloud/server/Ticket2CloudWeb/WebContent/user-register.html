@@ -6,6 +6,11 @@
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
 <script
 	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+ function openWindow(){
+	 window.open("user-login.html");	 
+ }
+</script>
 </head>
 <body>
 	<div id="form_wrapper" class="form_wrapper">	
@@ -29,7 +34,8 @@
 				</div>
 				<div>
 					<label>Código Postal:</label> <input type="number"
-						required="required" tabindex="7">
+						required="required" tabindex="7" autocomplete="on" pattern="((0[1-9]|5[0-2])|[1-4][0-9])[0-9]{3}"
+						title="Introduzca un formato de Código postal válido por favor">
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -46,23 +52,16 @@
 						tabindex="6">
 				</div>
 				<div>
-					<label style="width: 194px; ">Número de teléfono:</label> <input type="text" tabindex="8">
+					<label style="width: 194px; ">Número de teléfono:</label> <input type="text" tabindex="8" autocomplete="on" pattern="[0-9]{9}" title="Introduzca un número de teléfono válido por favor (9 dígitos)" maxlength="9">
 				</div>
 				<div class="clear"></div>
 			</div>
 		</div>		
 		
-		<div class="content_foot">
-			<div class="remember">
-				<input type="checkbox"><span>Recibir actualizaciones</span>
-			</div>
-			<div class="remember" style="float: left;margin-left: 5%;">
-				<input type="submit" value="Registrar" onclick="javascritp:window.close();">
-			</div>
-			<div>
-				 <a href="user-register.html" rel="register">No
-					tienes cuenta? Registrate aquí</a>
-			</div>						
+		<div class="content_foot">			
+			<div style="margin-left: 40%">
+				<input type="submit" value="Registrar" onclick="javascript:openWindow()">
+			</div>								
 		</div>
 	</form>
 </div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Company menu</title>
+<link rel="stylesheet" type="text/css" href="css/tickcloud.css">
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
+<script type="text/javascript">
+ function openCompanyTotalSalesConsultation(){
+	 window.open("company-total-sales.html");	 
+ }
+ function openCompanySalesByProductConsultation(){
+	 window.open("company-sales-product.html");	 
+ }
+</script>
+</head>
+<body>
+	<div id="form_wrapper" class="form_wrapper">	
+	<div id="content_head" class="content_head">
+		<h3>Menú de consulta</h3>
+	</div>		
+		<div id="content" class="content" style="padding-top: 10px">			
+			<div class="column" style="float: left">
+				<img alt="Consulta Ventas Totales" src="images/ventasTotales.PNG" style="width: 155px; height: 123px" onclick="javascript:openCompanyTotalSalesConsultation()">
+			</div>
+			<div class="column" style="float: right">
+				<img alt="Consulta Ventas Producto" src="images/ventasProducto.PNG" style="width: 155px; height: 123px" onclick="javascript:openCompanySalesByProductConsultation()">
+			</div>
+		</div>		
+		
+		<div class="content_foot">			
+											
+		</div>
+	
+</div>
+</body>
+</html>
