@@ -4,22 +4,14 @@
 <meta charset="ISO-8859-1">
 <title>Ventas totales</title>
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
-<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-function openPDF(){
-	window.open("facturas/facturaCode39.pdf", "Selección de producto", "location=no,width=600,height=600,scrollbars=yes,top=100,left=700,resizable = no");
-}
-</script>
-
 <script>
 $(document).ready(function() {
 	$("#age").click(function() {		
 		if ($("#age").prop('checked')){
 			$("#minAge").attr("disabled", false);
 		    $("#maxAge").attr("disabled", false);
-		    $("#intervalAge").attr("disabled", false);
+		    $("#intervalAge").attr("disabled", false);		    
 		}
 		else{
 			$("#minAge").attr("disabled", true);
@@ -37,20 +29,55 @@ $(document).ready(function() {
 		    $("#intervalDistance").attr("disabled", true);		    
 		}
 	});
-	$("#calculateButton").click(function() {		
+	$("#calculateButton").click(function() {
+		if(dateFrom.value==""){		    
+			dateFrom.setCustomValidity('Introduzca Fecha Desde, por favor.');
+			dateFrom.reportValidity();
+	    	return;
+	    }
+		if(dateTo.value==""){		    
+			dateTo.setCustomValidity('Introduzca Fecha Hasta, por favor.');
+			dateTo.reportValidity();
+	    	return;
+	    }
 		if ($("#gender").prop('checked')){
 			$('#genderGraphic').show();		   
 		}
 		else {
 			$('#genderGraphic').hide();		   
 		}
-		if ($("#age").prop('checked')){		 
+		if ($("#age").prop('checked')){
+			if(minAge.value==""){		    
+		    	minAge.setCustomValidity('Introduzca la edad, por favor.');
+		    	minAge.reportValidity();
+		    	return;
+	        }
+			if(maxAge.value==""){		    
+				maxAge.setCustomValidity('Introduzca la edad, por favor.');
+				maxAge.reportValidity();
+		    	return;
+	        }
+			if(intervalAge.value==""){		    
+				intervalAge.setCustomValidity('Introduzca el intervalo para la muestra por edad, por favor.');
+				intervalAge.reportValidity();
+		    	return;
+	        }
 			$('#ageGraphic').show();	
 		}
 		else {
 			$('#ageGraphic').hide();		   
 		}
 		if ($("#distance").prop('checked')){
+			if(maxDistance.value==""){		    
+				maxDistance.setCustomValidity('Introduzca la distancia máxima, por favor.');
+				maxDistance.reportValidity();
+		    	return;
+	        }			
+			if(intervalDistance.value==""){		    
+				intervalDistance.setCustomValidity('Introduzca el intervalo para la muestra por distancia, por favor.');
+				intervalDistance.reportValidity();
+		    	return;
+	        }
 			$('#distanceGraphic').show();	
 		}
 		else {
@@ -74,11 +101,11 @@ $(document).ready(function() {
 			<div class="column" style="float: left;width: 28%">
 				<div>
 					<label>Fecha Desde:</label> <input type="date"
-						required="required" tabindex="1" style="width: 90%; ">
+						required="required" tabindex="1" style="width: 90%; " id="dateFrom">
 				</div>
 				<div>
 					<label>Fecha Hasta:</label> <input type="date"
-						required="required" tabindex="2" style="width:  90%; ">
+						required="required" tabindex="2" style="width:  90%; " id="dateTo">
 				</div>				
 				<div class="clear"></div>
 			</div><!-- column-->
@@ -89,7 +116,7 @@ $(document).ready(function() {
                 		<legend>Segmentar ventas por:</legend>
                         <input type="checkbox" id="gender" name="gender" value="Sexo" tabindex="3" style="width: 10%; "/>Sexo <br />
                         <input type="checkbox" id="age" name="age" value="Edad" tabindex="4" style="width: 10%; ">Edad <input type="number"
-						id="minAge" min="0" max="99" required="required" tabindex="5" maxlength="2" style="height: 10%; width: 10%;" disabled="disabled"> a: <input type="number"
+						id="minAge" min="0" max="99" required="required" tabindex="5" maxlength="2" style="height: 10%; width: 10%;" disabled="disabled" required> a: <input type="number"
 						id="maxAge" min="0" max="99" required="required" tabindex="6" maxlength="2" style="height: 10%; width: 10%;" disabled="disabled"> años / <input type="number"
 						id="intervalAge" min="1" max="10" required="required" tabindex="7" maxlength="2" style="height: 10%; width: 10%;" disabled="disabled"><br />
                         

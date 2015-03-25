@@ -15,17 +15,31 @@ $(document).ready(function() {
 	$("#loginButton").click(function() {		
 		if (user.value != "user") {
 			user.setCustomValidity('No existe un usuario con el id/password introducido.');
-            user.reportValidity();
-        }
+	        user.reportValidity();
+	    }
 		else if (password.value != "password") {
 			password.setCustomValidity('No existe un usuario con el id/password introducido.');
 			password.reportValidity();
-        }		
+	    }		
 		else{ 
 			window.open("user-search.html");		
 		}
 	});
-		
+	$(window).keypress(function(e) {   
+	        if (e.which == 13) {
+	        	if (user.value != "user") {
+	    			user.setCustomValidity('No existe un usuario con el id/password introducido.');
+	                user.reportValidity();
+	            }
+	    		else if (password.value != "password") {
+	    			password.setCustomValidity('No existe un usuario con el id/password introducido.');
+	    			password.reportValidity();
+	            }		
+	    		else{ 
+	    			window.open("user-search.htmll");		
+	    		}
+	        } 
+	});		
 });
 
 </script>

@@ -17,42 +17,40 @@
 	<div id="content_head" class="content_head">
 		<h3>Registro</h3>
 	</div>
-	<form id="register" class="register" autocomplete="on">		
+	<form id="register" class="register" autocomplete="on" onsubmit="javascript:openWindow()">		
 		<div id="content" class="content">			
 			<div class="column" style="float: left">
 				<div>
 					<label>Nombre:</label> <input type="text"
-						required="required" tabindex="1" autofocus="autofocus">
+						required tabindex="1" autofocus="autofocus">
 				</div>
 				<div>
 					<label style="width: auto;">Fecha Nacimiento:</label> <input type="date"
-						required="required" tabindex="3">
+						required tabindex="3">
 				</div>
 				<div>
-					<label>Id:</label> <input type="text" maxlength="8"
-						required="required" tabindex="5">
+					<label>Id Usuario:</label> <input type="text" maxlength="8"
+						required tabindex="5">
 				</div>
 				<div>
-					<label>Código Postal:</label> <input type="number"
-						required="required" tabindex="7" autocomplete="on" pattern="((0[1-9]|5[0-2])|[1-4][0-9])[0-9]{3}"
-						title="Introduzca un formato de Código postal válido por favor">
+					<label>Código Postal:</label> <input type="text" required tabindex="7" autocomplete="on" pattern="[0-9]{5}" title="Inserte los 5 números de su código postal">
 				</div>
 				<div class="clear"></div>
 			</div>
 			<div class="column" style="float: right">
 				<div>
 					<label style="width: 190px; ">Correo electrónico:</label> <input type="email"
-						required="required" tabindex="2">
+						required tabindex="2">
 				</div>
 				<div>
 					<label>Sexo:</label> <input type="radio" name="sexo" id="radioHombre" value="Hombre" checked = "checked" style="width:auto ; height: auto; ">Hombre <input type="radio" name="sexo" id="radioMujer" value="Mujer" style="width:auto ; height: auto; ">Mujer						
 				</div>
 				<div>
-					<label>Clave:</label> <input type="password" required="required"
+					<label>Clave:</label> <input type="password" required
 						tabindex="6">
 				</div>
 				<div>
-					<label style="width: 194px; ">Número de teléfono:</label> <input type="text" tabindex="8" autocomplete="on" pattern="[0-9]{9}" title="Introduzca un número de teléfono válido por favor (9 dígitos)" maxlength="9">
+					<label style="width: 194px; ">Número de teléfono:</label> <input type="text" tabindex="8" autocomplete="on" pattern="[0-9]{9}" title="Introduzca un número de teléfono válido por favor (9 dígitos)" maxlength="9" placeholder="Opcional">
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -60,7 +58,7 @@
 		
 		<div class="content_foot">			
 			<div style="margin-left: 40%">
-				<input type="submit" value="Registrar" onclick="javascript:openWindow()">
+				<input type="submit" value="Registrar">
 			</div>								
 		</div>
 	</form>

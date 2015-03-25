@@ -38,20 +38,60 @@ $(document).ready(function() {
 		    $("#intervalDistance").attr("disabled", true);		    
 		}
 	});
-	$("#calculateButton").click(function() {		
+	$("#calculateButton").click(function() {
+		if(product.value==""){		    
+			product.setCustomValidity('Seleccione un producto, por favor.');
+			product.reportValidity();
+	    	return;
+	    }
+		if(dateFrom.value==""){		    
+			dateFrom.setCustomValidity('Introduzca Fecha Desde, por favor.');
+			dateFrom.reportValidity();
+	    	return;
+	    }
+		if(dateTo.value==""){		    
+			dateTo.setCustomValidity('Introduzca Fecha Hasta, por favor.');
+			dateTo.reportValidity();
+	    	return;
+	    }
 		if ($("#gender").prop('checked')){
 			$('#genderGraphic').show();		   
 		}
 		else {
 			$('#genderGraphic').hide();		   
 		}
-		if ($("#age").prop('checked')){		 
+		if ($("#age").prop('checked')){
+			if(minAge.value==""){		    
+		    	minAge.setCustomValidity('Introduzca la edad, por favor.');
+		    	minAge.reportValidity();
+		    	return;
+	        }
+			if(maxAge.value==""){		    
+				maxAge.setCustomValidity('Introduzca la edad, por favor.');
+				maxAge.reportValidity();
+		    	return;
+	        }
+			if(intervalAge.value==""){		    
+				intervalAge.setCustomValidity('Introduzca el intervalo para la muestra por edad, por favor.');
+				intervalAge.reportValidity();
+		    	return;
+	        }
 			$('#ageGraphic').show();	
 		}
 		else {
 			$('#ageGraphic').hide();		   
 		}
 		if ($("#distance").prop('checked')){
+			if(maxDistance.value==""){		    
+				maxDistance.setCustomValidity('Introduzca la distancia máxima, por favor.');
+				maxDistance.reportValidity();
+		    	return;
+	        }			
+			if(intervalDistance.value==""){		    
+				intervalDistance.setCustomValidity('Introduzca el intervalo para la muestra por distancia, por favor.');
+				intervalDistance.reportValidity();
+		    	return;
+	        }
 			$('#distanceGraphic').show();	
 		}
 		else {
@@ -77,16 +117,16 @@ $(document).ready(function() {
 		<div id="contentSales" class="contentSales">			
 			<div class="column" style="float: left;width: 28%">
 				<div >
-					<label>Producto:</label> <input type="text" id="product" name="product" tabindex="4" style="width: 80%;vertical-align: top;" value=""> <input type="button"
+					<label>Producto:</label> <input type="text" id="product" name="product" tabindex="4" disabled style="width: 80%;vertical-align: top;" value=""> <input type="button"
 						id="productButton" name="productButton" value=".." tabindex="0" style="width: 14%; ">
 				</div>				
 				<div>
 					<label>Fecha Desde:</label> <input type="date"
-						required="required" tabindex="1" style="width: 90%; ">
+						required="required" tabindex="1" style="width: 90%; " id="dateFrom">
 				</div>
 				<div>
 					<label>Fecha Hasta:</label> <input type="date"
-						required="required" tabindex="2" style="width:  90%; ">
+						required="required" tabindex="2" style="width:  90%; " id="dateTo">
 				</div>				
 				<div class="clear"></div>
 			</div><!-- column-->
