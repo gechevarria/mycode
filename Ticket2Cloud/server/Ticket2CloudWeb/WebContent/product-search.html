@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta http-equiv="expires" content="0">
 <title>Compras realizadas</title>
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
@@ -9,17 +10,21 @@
 <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script type="text/javascript" class="init">
 $(document).ready(function() {
-	$('#products').DataTable();
+	$('#products').DataTable();		
+	$('#products tr').dblclick(function () {
+		var $this=$(this);
+		var value=$(this).find('td:first').text()		
+		localStorage.setItem('product',value );
+		window.close();
+	});
 } );
 </script>
-<script type="text/javascript">
-function cerrar() {
- var data = window.document.getElementById('val1').value;
- window.opener.document.getElementById('deHijo').innerHTML = "Este texto viene de la página hijo: "+data; 
- 
- this.window.close();
+<!-- <script type="text/javascript">
+function returnSelectedProduct() {
+	localStorage.setItem('product', this.value);
+	window.close();
  }
-</script>
+</script> -->
 </head>
 <body>
 	<div id="form_wrapper" class="form_wrapper" style="width: 550px">	
@@ -31,48 +36,39 @@ function cerrar() {
 			<table id="products" class="display">
         <thead>
             <tr>                
-                <th>Artículo</th>
                 <th>Código</th>
+                <th>Artículo</th>
                 <th>PVP</th>
                 
             </tr>
         </thead>
- <!--
-  <tr>
-                <th>Fecha</th>
-                <th>Artículo</th>
-                <th>Establecimiento</th>
-                <th>Importe</th>
-                <th>Devolucion</th>               
-            </tr> 
-  -->
         <tfoot>
             <tr>                
-                <th>Artículo</th>
                 <th>Código</th>
+                <th>Artículo</th>
                 <th>PVP</th>                
             </tr>
         </tfoot>
  
         <tbody>
-            <tr ondblclick="openPDF();">            	
-                <td>Pantalón vaquero azul</td>
-                <td>1924567890463</td>
+            <tr ondblclick="returnSelectedProduct();">
+            	<td>1924567890463</td>            	
+                <td>Pantalón vaquero azul</td>                
                 <td>35</td>                                         
             </tr>
-            <tr ondblclick="openPDF();">            	
-                <td>Camisa blanca</td>
-                <td>5929856790463</td>
+            <tr ondblclick="returnSelectedProduct();">
+            	<td>5929856790463</td>            	
+                <td>Camisa blanca</td>                
                 <td>60</td>                                          
             </tr>
-            <tr ondblclick="openPDF();">            	
-                <td>Abrigo marrón</td>
-                <td>1929345862463</td>
+            <tr ondblclick="returnSelectedProduct();">
+            	<td>1929345862463</td>            	
+                <td>Abrigo marrón</td>                
                 <td>150</td>                                          
             </tr>
-            <tr ondblclick="openPDF();">            	
-                <td>Zapatos caballero negro</td>
-                <td>2894567890233</td>
+            <tr ondblclick="returnSelectedProduct();">
+            	<td>2894567890233</td>            	
+                <td>Zapatos caballero negro</td>                
                 <td>95</td>                                          
             </tr>
             </tbody>
