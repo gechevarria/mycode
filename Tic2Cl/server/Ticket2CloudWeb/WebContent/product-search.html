@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$('#products').DataTable();		
 	$('#products tr').dblclick(function () {
 		var $this=$(this);
-		var value=$(this).find('td:first').text()		
+		var value=$(this).find('td:first').text();	
 		localStorage.setItem('product',value );
 		window.close();
 	});
@@ -51,22 +51,22 @@ function returnSelectedProduct() {
         </tfoot>
  
         <tbody>
-            <tr ondblclick="returnSelectedProduct();">
+            <tr>
             	<td>1924567890463</td>            	
                 <td>Pantalón vaquero azul</td>                
                 <td>35</td>                                         
             </tr>
-            <tr ondblclick="returnSelectedProduct();">
+            <tr>
             	<td>5929856790463</td>            	
                 <td>Camisa blanca</td>                
                 <td>60</td>                                          
             </tr>
-            <tr ondblclick="returnSelectedProduct();">
+            <tr>
             	<td>1929345862463</td>            	
                 <td>Abrigo marrón</td>                
                 <td>150</td>                                          
             </tr>
-            <tr ondblclick="returnSelectedProduct();">
+            <tr>
             	<td>2894567890233</td>            	
                 <td>Zapatos caballero negro</td>                
                 <td>95</td>                                          
