@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="expires" content="0">
+<title>Compras realizadas</title>
+<link rel="stylesheet" type="text/css" href="css/tickcloud.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+	$('#activities').DataTable();		
+	$('#activities tr').on('touchstart', function() {	
+		var $this=$(this);
+		var value=$(this).find('td:first').next("td").text();		
+		localStorage.setItem('activity',value );
+		window.close();
+	});
+} );
+</script>
+</head>
+<body>
+	<div id="form_wrapper" class="form_wrapper" style="width: 550px">	
+	<div id="content_head" class="content_head">
+		<h3>Seleccionar actividad de la compañía</h3>
+	</div>
+	<form id="register" class="register" autocomplete="on">		
+		<div id="content" class="content">			
+			<table id="activities" class="display">
+        <thead>
+            <tr>                
+                <th>Código</th>
+                <th>Actividad</th>                                
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>                
+                <th>Código</th>
+                <th>Actividad</th>                              
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr>
+            	<td>1000</td>            	
+                <td>Textil</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Agricultura y jardinería</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Hostelería</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Alimentos y bebidas</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Antigüedades y arte</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Decoración y muebles</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Artículos de regalo</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Artesanía y bricolaje</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Viajes y turismo</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Auto, moto y bici</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Óptica y fotografía</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Informática y Multimedia</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Medicina y farmacología</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Animales</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Deporte, caza y pesca</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Zapatos caballero negro</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Música y discografía</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Iluminación</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Infantil</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Bodas, vestidos de novia</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Peletería</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Náutica</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Orfebrería y bisutería</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Joyería</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Cosmética y belleza</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Cuero y marroquinería</td>                                                               
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Construcción</td>                                                                        
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Ecología y ambiente</td>                                                                       
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Enología</td>                                                            
+            </tr>
+            <tr>
+            	<td>1000</td>            	
+                <td>Gran Almacen</td>                                                               
+            </tr>            
+            </tbody>
+    </table>
+		</div>		
+		
+		<div class="content_foot" style="width: 550px">
+			<div class="remember">
+				
+			</div>
+			<div class="remember" style="float: left;margin-left: 5%;">
+				
+			</div>
+			<div>
+				 <a href="javascript:window.close();">Salir</a>
+			</div>						
+		</div>
+	</form>
+</div>
+</body>
+</html>

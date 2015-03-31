@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ofertas, promociones, saldos y liquidaciones</title>
+<link rel="stylesheet" type="text/css" href="css/tickcloud.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+	$('#promotions').DataTable();
+} );
+</script>
+
+<script type="text/javascript">
+function openPromotionImage(){
+    window.open("facturas/facturaCode39.pdf","_blank");
+}
+</script>
+</head>
+<body>
+	<div id="form_wrapper" class="form_wrapper">	
+	<div id="content_head" class="content_head">
+		<h3>Ofertas, promociones, saldos y liquidaciones</h3>
+	</div>
+	<form id="register" class="register" autocomplete="on">		
+		<div id="content" class="content">			
+			<table id="promotions" class="display">
+        <thead>
+            <tr>
+            	<th style="width: 10%">Estab.</th>
+                <th style="width: 7%">Desde</th>
+                <th style="width: 7%">Hasta</th>                
+                <th style="width: 40%">Descrip.</th>
+                <th style="width: 5%">Tipo</th>
+                <th style="width: 2%">Imagen</th>
+            </tr>
+        </thead>
+ <!--
+  <tr>
+                <th>Fecha</th>
+                <th>Artículo</th>
+                <th>Establecimiento</th>
+                <th>Importe</th>
+                <th>Devolucion</th>               
+            </tr> 
+  -->
+        <tfoot>
+            <tr>
+                <th style="width: 10%">Estab.</th>
+                <th style="width: 7%">Desde</th>
+                <th style="width: 7%">Hasta</th>                
+                <th style="width: 40%">Descrip.</th>
+                <th style="width: 5%">Tipo</th>
+                <th style="width: 2%">Imagen</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr ondblclick="openPromotionImage();">
+            	<td data-search="El Corte Inglés">C.Ingles</td>
+            	<td data-order="1303686000">25-04-11</td>
+            	<td data-order="1311548400">25-04-11</td>
+                <td>Descripción</td>                
+                <td>Oferta</td>
+                <td>No</td>                               
+            </tr>
+            <tr ondblclick="openPromotionImage();">            	
+                <td data-search="Media Markt S.A">M.Markt</td>
+            	<td data-order="1303686000">25-04-11</td>
+            	<td data-order="1311548400">25-04-11</td>
+                <td>Descripción</td>                
+                <td>Oferta</td>
+                <td>No</td>                               
+            </tr>
+            <tr ondblclick="openPromotionImage();">            	
+                <td data-search="Zara">Zara</td>
+            	<td data-order="1303686000">25-04-11</td>
+            	<td data-order="1311548400">25-04-11</td>
+                <td>Descripción</td>                
+                <td>Oferta</td>
+                <td>No</td>                               
+            </tr>
+            <tr ondblclick="openPromotionImage();">
+            	<td data-search="Joyería Martinez">J.Martinez</td>
+            	<td data-order="1303686000">25-04-11</td>
+            	<td data-order="1311548400">25-04-11</td>
+                <td>Descripción</td>                
+                <td>Oferta</td>
+                <td>No</td>            	                              
+            </tr>
+            </tbody>
+    </table>
+		</div>		
+		
+		<div class="content_foot">
+			<div class="remember">
+				
+			</div>
+			<div class="remember" style="float: left;margin-left: 5%;">
+				
+			</div>
+			<div>
+				 <a href="javascript:window.close();">Salir</a>
+			</div>						
+		</div>
+	</form>
+</div>
+</body>
+</html>

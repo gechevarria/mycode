@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Company menu</title>
+<link rel="stylesheet" type="text/css" href="css/tickcloud.css">
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
+<script type="text/javascript">
+ function javascript:openPersonalBuys(){
+	 window.open("user-search.html");	 
+ }
+ function openCompanySalesByProductConsultation(){
+	 window.open("company-sales-product.html");	 
+ }
+ function javascript:openCompanySalesPromotion(){
+	 window.open("company-sales-promotion.html");	 
+ }
+</script>
+</head>
+<body>
+	<div id="form_wrapper" class="form_wrapper">	
+	<div id="content_head" class="content_head">
+		<h3>Menú</h3>
+	</div>		
+		<div id="content" class="content">			
+			<div class="column" style="float: left">
+				<img class="imgCompanyMenu" alt="Consulta Compras" src="images/ventasTotales.PNG" onclick="javascript:openPersonalBuys();">
+			</div>
+			<div class="column" style="float: right">
+				<img class="imgCompanyMenu" alt="Consulta Ventas Producto" src="images/ventasProducto.PNG" onclick="javascript:openCompanySalesByProductConsultation();">
+			</div>
+			<div class="column">
+				<img class="imgCompanyMenu" alt="Promoción de ventas" src="images/ventasTotales.PNG" onclick="javascript:openCompanySalesPromotion();">
+			</div>
+		</div>		
+		
+		<div class="content_foot">			
+											
+		</div>
+	
+</div>
+</body>
+</html>
