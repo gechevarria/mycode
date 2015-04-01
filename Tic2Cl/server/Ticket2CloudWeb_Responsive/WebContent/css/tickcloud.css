@@ -24,6 +24,10 @@
 	width: 95%;
 	height: 95%;		
 }
+.imgUserMenu{	
+	width: 95%;
+	height: 95%;		
+}
 .contentForgotPassword{
 	width:80%;
 	padding-left: 20%;		
@@ -108,3 +112,11 @@
 .clear{
 	height: 8px;
 }
+
+.dialog {  
+    width: 500px;  
+    background:#e8e8e8;
+    border: 1px solid #dadada;
+    font-family:sans-serif;
+    padding: 5px 10px 20px 20px;
+}  

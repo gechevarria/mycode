@@ -5,11 +5,6 @@
 <title>User login</title>
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-<script type="text/javascript">
- function openWindow(){
-	 window.open("user-menu.html");	 
- }
-</script>
 <script>
 $(document).ready(function() {	
 	$("#loginButton").on('touchstart', function() {			
@@ -22,7 +17,20 @@ $(document).ready(function() {
 			password.reportValidity();
 	    }		
 		else{ 
-			window.open("user-search.html");		
+			window.open("user-menu.html");		
+		}
+	});
+	$("#loginButton").click(function() {			
+		if (user.value != "user") {
+			user.setCustomValidity('No existe un usuario con el id/password introducido.');
+	        user.reportValidity();
+	    }
+		else if (password.value != "pass") {
+			password.setCustomValidity('No existe un usuario con el id/password introducido.');
+			password.reportValidity();
+	    }		
+		else{ 
+			window.open("user-menu.html");		
 		}
 	});
 	$(window).keypress(function(e) {   
@@ -31,12 +39,12 @@ $(document).ready(function() {
 	    			user.setCustomValidity('No existe un usuario con el id/password introducido.');
 	                user.reportValidity();
 	            }
-	    		else if (password.value != "password") {
+	    		else if (password.value != "pass") {
 	    			password.setCustomValidity('No existe un usuario con el id/password introducido.');
 	    			password.reportValidity();
 	            }		
 	    		else{ 
-	    			window.open("user-search.htmll");		
+	    			window.open("user-menu.html");		
 	    		}
 	        } 
 	});		

@@ -4,19 +4,22 @@
 <meta charset="ISO-8859-1">
 <title>Company menu</title>
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
-<script
-	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
-</script>
-<script type="text/javascript">
- function javascript:openPersonalBuys(){
-	 window.open("user-search.html");	 
- }
- function openCompanySalesByProductConsultation(){
-	 window.open("company-sales-product.html");	 
- }
- function javascript:openCompanySalesPromotion(){
-	 window.open("company-sales-promotion.html");	 
- }
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function() {	
+	$("#imgPersonalBuys").on('touchstart', function() {			
+		window.open("user-search.html");
+	});
+	$("#imgPersonalBuys").click(function() {		
+		window.open("user-search.html");
+	});
+	$("#imgOffers").on('touchstart', function() {			
+		window.open("user-promotions-search.html");
+	});
+	$("#imgOffers").click(function() {			
+		window.open("user-promotions-search.html");
+	});
+});	
 </script>
 </head>
 <body>
@@ -26,14 +29,11 @@
 	</div>		
 		<div id="content" class="content">			
 			<div class="column" style="float: left">
-				<img class="imgCompanyMenu" alt="Consulta Compras" src="images/ventasTotales.PNG" onclick="javascript:openPersonalBuys();">
+				<img id="imgPersonalBuys" name="imgPersonalBuys" class="imgUserMenu" alt="Consulta Compras Personales" src="images/compras.png">				
 			</div>
 			<div class="column" style="float: right">
-				<img class="imgCompanyMenu" alt="Consulta Ventas Producto" src="images/ventasProducto.PNG" onclick="javascript:openCompanySalesByProductConsultation();">
-			</div>
-			<div class="column">
-				<img class="imgCompanyMenu" alt="Promoción de ventas" src="images/ventasTotales.PNG" onclick="javascript:openCompanySalesPromotion();">
-			</div>
+				<img id="imgOffers" name="imgOffers" class="imgUserMenu" alt="Consulta Ofertas y Promociones" src="images/ofertas-promociones.png">
+			</div>			
 		</div>		
 		
 		<div class="content_foot">			
