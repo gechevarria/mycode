@@ -10,12 +10,25 @@
 <script type="text/javascript" class="init">
 $(document).ready(function() {
 	$('#shopping').DataTable();
-	$("#tr1").on('touchstart', function() {			
+	$('tr').on('touchstart', function() {
+		$('tr').not(this).removeClass('selected');
+		$(this).toggleClass('selected');
+		var id = $(this).attr('id');			
+	});
+	$('tr').click(function() {
+		//$(this).addClass('selected');
+		$('tr').not(this).removeClass('selected');
+		$(this).toggleClass('selected');
+		var id = $(this).attr('id');		
+		 
+	});
+	$("#showTicketButton").on('touchstart', function() {		
+		window.open('tickets-container.html','Ticket de compra','location=no, status=yes');
+	});
+	$("#showTicketButton").click(function() {		
 		window.open('tickets-container.html','Ticket de compra','top=100, left=100, width=300, height=300, location=no, status=yes');
 	});
-	$("#tr1").dblclick(function() {		
-		window.open('tickets-container.html','Ticket de compra','top=100, left=100, width=300, height=300, location=no, status=yes');	    
-	});
+	
 } );
 </script>
 </head>
@@ -28,7 +41,7 @@ $(document).ready(function() {
 		<div id="content" class="content">			
 			<table id="shopping" class="display">
         <thead>
-            <tr>
+            <tr style="">
                 <th>Fecha</th>
                 <th>Artículo</th>
                 <th>Establecimiento</th>
@@ -56,28 +69,28 @@ $(document).ready(function() {
         </tfoot>
  
         <tbody>
-            <tr id="tr1">
+            <tr id="1">
             	<td data-order="1303686000">25-04-11</td>
                 <td>Camiseta Levi's</td>
                 <td data-search="El Corte Inglés">C.Ingles</td>
                 <td>12,6</td>
                 <td>No</td>                               
             </tr>
-            <tr>
+             <tr id="2">
             	<td data-order="1311548400">25-07-11</td>
                 <td>Disco duro</td>
                 <td data-search="Media Markt S.A">M.Markt</td>
                 <td>60</td>
                 <td>Si</td>                               
             </tr>
-            <tr>
+             <tr id="3">
             	<td data-order="1231718400">12-01-09</td>
                 <td>Camisa blanca</td>
                 <td data-search="Zara">Zara</td>
                 <td>20</td>
                 <td>No</td>                                
             </tr>
-            <tr>
+             <tr id="4">
             	<td data-order="1332975600">29-03-12</td>
                 <td>Reloj casio</td>
                 <td data-search="Joyería Martinez">J.Martinez</td>
@@ -87,7 +100,9 @@ $(document).ready(function() {
             </tbody>
     </table>
 		</div>		
-		
+		<div style="margin-left: 40%;">
+				<input type="button" id="showTicketButton" value="Mostrar Ticket">
+		</div>
 		<div class="content_foot">
 			<div class="remember">
 				

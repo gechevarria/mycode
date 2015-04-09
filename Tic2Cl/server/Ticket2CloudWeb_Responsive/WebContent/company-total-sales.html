@@ -6,8 +6,28 @@
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script>
+	function validateDates(){
+		if(dateFrom.value==""){				
+			dateFrom.setCustomValidity('Introduzca Fecha Desde, por favor.');
+			dateFrom.reportValidity();
+	    	return;
+	    }
+		if(dateTo.value==""){		    
+			dateTo.setCustomValidity('Introduzca Fecha Hasta, por favor.');
+			dateTo.reportValidity();
+	    	return;
+	    }
+	}
+</script>
+<script>
 $(document).ready(function() {
-	$("#age").on('touchstart', function() {			
+	$("#age").click(function() {		
+		age();
+	});
+	$("#age").on('touchstart', function() {
+		age();
+	});
+	function age(){
 		if ($("#age").prop('checked')){
 			$("#minAge").attr("disabled", false);
 		    $("#maxAge").attr("disabled", false);
@@ -18,8 +38,14 @@ $(document).ready(function() {
 		    $("#maxAge").attr("disabled", true);
 		    $("#intervalAge").attr("disabled", true);
 		}
+	}
+	$("#distance").click(function() {		
+		distance();
 	});
 	$("#distance").on('touchstart', function() {			
+		distance();
+	});
+	function distance(){
 		if ($("#distance").prop('checked')){
 			$("#maxDistance").attr("disabled", false);
 		    $("#intervalDistance").attr("disabled", false);		   
@@ -28,18 +54,15 @@ $(document).ready(function() {
 			$("#maxDistance").attr("disabled", true);
 		    $("#intervalDistance").attr("disabled", true);		    
 		}
+	}
+	$("#calculateButton").click(function() {		
+		calculate();
 	});
 	$("#calculateButton").on('touchstart', function() {	
-		if(dateFrom.value==""){		    
-			dateFrom.setCustomValidity('Introduzca Fecha Desde, por favor.');
-			dateFrom.reportValidity();
-	    	return;
-	    }
-		if(dateTo.value==""){		    
-			dateTo.setCustomValidity('Introduzca Fecha Hasta, por favor.');
-			dateTo.reportValidity();
-	    	return;
-	    }
+		calculate();
+	});
+	function calculate(){
+		validateDates();
 		if ($("#gender").prop('checked')){
 			$('#genderGraphic').show();		   
 		}
@@ -82,11 +105,9 @@ $(document).ready(function() {
 		}
 		else {
 			$('#distanceGraphic').hide();		   
-		}
-	});	
-	
-});
-
+		}			
+	}
+} );
 </script>
 
   

@@ -26,7 +26,8 @@
 }
 .imgUserMenu{	
 	width: 95%;
-	height: 95%;		
+	height: 95%;
+	display: block;		
 }
 .contentForgotPassword{
 	width:80%;

@@ -8,21 +8,42 @@
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script type="text/javascript" class="init">
-$(document).ready(function() {	
-	$('#promotions').DataTable();	
-	$('#promotions tr').on('touchstart', function() {
-		var $this=$(this);
-		var value=$(this).find('td:first').text();	
-		localStorage.setItem('offerImage',value );
-		window.open('images-container.html','Ofertas y promociones','top=100, left=100, width=300, height=300, location=no, status=yes');		
-	});	
-	$('#promotions tr').dblclick(function() {		
-		var $this=$(this);
-		var value=$(this).find('td:first').text();	
-		localStorage.setItem('offerImage',value );
-		window.open('images-container.html','Ofertas y promociones','top=100, left=100, width=300, height=300, location=no, status=yes');			    
-	});	
-	
+$(document).ready(function() {
+	$('#promotions').DataTable();
+	var selectedRow;
+	$('tr').on('touchstart', function() {
+		selectedRow = "";
+		$('tr').not(this).removeClass('selected');
+		$(this).toggleClass('selected');
+		if ($(this).hasClass('selected'))
+			selectedRow = $(this);
+	});
+	$('tr').click(function() {
+		selectedRow = "";
+		$('tr').not(this).removeClass('selected');
+		$(this).toggleClass('selected');
+		if ($(this).hasClass('selected'))
+			selectedRow = $(this);	
+		 
+	});
+	$("#showOfferButton").on('touchstart', function() {		
+		 if (selectedRow=="")
+		    	alert ('Por favor selecciona una oferta.')
+		    else{
+		    	var value=$(selectedRow).find('td:first').text();	
+				localStorage.setItem('offerImage',value );
+				window.open('images-container.html','Ofertas y promociones','top=100, left=100, width=300, height=300, location=no, status=yes');
+		    }	
+	});
+	$("#showOfferButton").click(function() {		
+	    if (selectedRow=="")
+	    	alert ('Por favor selecciona una oferta.')
+	    else{
+	    	var value=$(selectedRow).find('td:first').text();	
+			localStorage.setItem('offerImage',value );
+			window.open('images-container.html','Ofertas y promociones','top=100, left=100, width=300, height=300, location=no, status=yes');
+	    }	    				
+	});
 	
 } );
 </script>
@@ -107,8 +128,11 @@ $(document).ready(function() {
             </tr>
             </tbody>
     </table>
-		</div>		
-		
+		</div>
+		<div id="output"></div>		
+		<div style="margin-left: 40%;">
+				<input type="button" id="showOfferButton" value="Mostrar Oferta">
+		</div>
 		<div class="content_foot">
 			<div class="remember">
 				
