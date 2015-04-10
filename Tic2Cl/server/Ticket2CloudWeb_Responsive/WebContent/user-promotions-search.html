@@ -10,7 +10,7 @@
 <script type="text/javascript" class="init">
 $(document).ready(function() {
 	$('#promotions').DataTable();
-	var selectedRow;
+	var selectedRow = "";
 	$('tr').on('touchstart', function() {
 		selectedRow = "";
 		$('tr').not(this).removeClass('selected');

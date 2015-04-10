@@ -10,23 +10,35 @@
 <script type="text/javascript" class="init">
 $(document).ready(function() {
 	$('#shopping').DataTable();
+	var selectedRow = "";
 	$('tr').on('touchstart', function() {
+		selectedRow = "";
 		$('tr').not(this).removeClass('selected');
 		$(this).toggleClass('selected');
-		var id = $(this).attr('id');			
+		if ($(this).hasClass('selected'))
+			selectedRow = $(this);			
 	});
 	$('tr').click(function() {
-		//$(this).addClass('selected');
+		selectedRow = "";
 		$('tr').not(this).removeClass('selected');
 		$(this).toggleClass('selected');
-		var id = $(this).attr('id');		
+		if ($(this).hasClass('selected'))
+			selectedRow = $(this);		
 		 
 	});
-	$("#showTicketButton").on('touchstart', function() {		
-		window.open('tickets-container.html','Ticket de compra','location=no, status=yes');
+	$("#selectionButton").on('touchstart', function() {
+		if (selectedRow=="")
+	    	alert ('Por favor selecciona una compra.')
+	    else{
+			window.open('tickets-container.html','Ticket de compra','location=no, status=yes');
+	    }
 	});
-	$("#showTicketButton").click(function() {		
-		window.open('tickets-container.html','Ticket de compra','top=100, left=100, width=300, height=300, location=no, status=yes');
+	$("#selectionButton").click(function() {		
+		if (selectedRow=="")
+	    	alert ('Por favor selecciona una compra.')
+	    else{
+	    	window.open('tickets-container.html','Ticket de compra','top=100, left=100, width=300, height=300, location=no, status=yes');
+	    }
 	});
 	
 } );
@@ -101,7 +113,7 @@ $(document).ready(function() {
     </table>
 		</div>		
 		<div style="margin-left: 40%;">
-				<input type="button" id="showTicketButton" value="Mostrar Ticket">
+				<input type="button" id="selectionButton" value="Mostrar Ticket">
 		</div>
 		<div class="content_foot">
 			<div class="remember">

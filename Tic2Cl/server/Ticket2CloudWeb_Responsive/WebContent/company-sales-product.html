@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-
 function openProductSelecionModalWindow(){	
    ventanaAbierta = window.open("product-search.html", "Selección_de_producto", "location=no,width=600,height=600,scrollbars=yes,top=100,left=700,resizable = no");   
 }
@@ -16,19 +15,31 @@ $(document).ready(function() {
 	$(window).focus(function() {
 		product.value=localStorage.getItem('product');
 	});
-	$("#age").on('touchstart', function() {			
+	$("#age").click(function() {		
+		age();
+	});
+	$("#age").on('touchstart', function() {
+		age();
+	});
+	function age(){
 		if ($("#age").prop('checked')){
 			$("#minAge").attr("disabled", false);
 		    $("#maxAge").attr("disabled", false);
-		    $("#intervalAge").attr("disabled", false);
+		    $("#intervalAge").attr("disabled", false);		    
 		}
 		else{
 			$("#minAge").attr("disabled", true);
 		    $("#maxAge").attr("disabled", true);
 		    $("#intervalAge").attr("disabled", true);
 		}
+	}
+	$("#distance").click(function() {		
+		distance();
 	});
-	$("#distance").on('touchstart', function() {		
+	$("#distance").on('touchstart', function() {			
+		distance();
+	});
+	function distance(){
 		if ($("#distance").prop('checked')){
 			$("#maxDistance").attr("disabled", false);
 		    $("#intervalDistance").attr("disabled", false);		   
@@ -37,8 +48,15 @@ $(document).ready(function() {
 			$("#maxDistance").attr("disabled", true);
 		    $("#intervalDistance").attr("disabled", true);		    
 		}
+	}
+	$("#calculateButton").click(function() {		
+		calculate();
 	});
 	$("#calculateButton").on('touchstart', function() {	
+		calculate();
+	});
+	function calculate(){
+		validateDates();
 		if(product.value==""){		    
 			product.setCustomValidity('Seleccione un producto, por favor.');
 			product.reportValidity();
@@ -97,7 +115,8 @@ $(document).ready(function() {
 		else {
 			$('#distanceGraphic').hide();		   
 		}
-	});
+	}
+			
 	$("#productButton").click(function() {
 		openProductSelecionModalWindow();
 	});	

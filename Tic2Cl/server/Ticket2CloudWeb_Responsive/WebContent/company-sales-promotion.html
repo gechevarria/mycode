@@ -6,8 +6,8 @@
 <link rel="stylesheet" type="text/css" href="css/tickcloud.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-
-    function PreviewImage() {
+	var validation;
+    function previewImage() {
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
 
@@ -15,23 +15,59 @@
             document.getElementById("uploadPreview").src = oFREvent.target.result;
         };
     };
+    function validations(){
+    	validation = 0;
+    	if(description.value==""){		    
+			description.setCustomValidity('Introduzca una descripción, por favor.');
+			description.reportValidity();
+	    	return;
+	    }
+    	else
+    		validation++;
+		if(dateFrom.value==""){		    
+			dateFrom.setCustomValidity('Introduzca Fecha Desde, por favor.');
+			dateFrom.reportValidity();
+	    	return;
+	    }
+		else
+    		validation++;
+		if(dateTo.value==""){		    
+			dateTo.setCustomValidity('Introduzca Fecha Hasta, por favor.');
+			dateTo.reportValidity();
+	    	return;
+	    }
+		else
+    		validation++;		
+    }
 
 </script>
 <script>
 $(document).ready(function() {	
-	$("#age").on('touchstart', function() {			
+	$("#age").click(function() {		
+		age();
+	});
+	$("#age").on('touchstart', function() {
+		age();
+	});
+	function age(){
 		if ($("#age").prop('checked')){
 			$("#minAge").attr("disabled", false);
 		    $("#maxAge").attr("disabled", false);
-		    $("#intervalAge").attr("disabled", false);
+		    $("#intervalAge").attr("disabled", false);		    
 		}
 		else{
 			$("#minAge").attr("disabled", true);
 		    $("#maxAge").attr("disabled", true);
 		    $("#intervalAge").attr("disabled", true);
 		}
+	}
+	$("#distance").click(function() {		
+		distance();
 	});
-	$("#distance").on('touchstart', function() {		
+	$("#distance").on('touchstart', function() {			
+		distance();
+	});
+	function distance(){
 		if ($("#distance").prop('checked')){
 			$("#maxDistance").attr("disabled", false);
 		    $("#intervalDistance").attr("disabled", false);		   
@@ -40,29 +76,17 @@ $(document).ready(function() {
 			$("#maxDistance").attr("disabled", true);
 		    $("#intervalDistance").attr("disabled", true);		    
 		}
+	}
+	$("#acceptButton").click(function() {		
+		accept();
 	});
 	$("#acceptButton").on('touchstart', function() {	
-		if(description.value==""){		    
-			description.setCustomValidity('Introduzca una descripción, por favor.');
-			description.reportValidity();
-	    	return;
-	    }
-		if(dateFrom.value==""){		    
-			dateFrom.setCustomValidity('Introduzca Fecha Desde, por favor.');
-			dateFrom.reportValidity();
-	    	return;
-	    }
-		if(dateTo.value==""){		    
-			dateTo.setCustomValidity('Introduzca Fecha Hasta, por favor.');
-			dateTo.reportValidity();
-	    	return;
-	    }
-		if ($("#gender").prop('checked')){
-			$('#genderGraphic').show();		   
-		}
-		else {
-			$('#genderGraphic').hide();		   
-		}
+		accept();
+	});		
+	function accept(){
+		if (validation<3)
+			alert('Debe introducir valor en los campos');
+		validations();		
 		if ($("#age").prop('checked')){
 			if(minAge.value==""){		    
 		    	minAge.setCustomValidity('Introduzca la edad, por favor.');
@@ -79,10 +103,6 @@ $(document).ready(function() {
 				intervalAge.reportValidity();
 		    	return;
 	        }
-			$('#ageGraphic').show();	
-		}
-		else {
-			$('#ageGraphic').hide();		   
 		}
 		if ($("#distance").prop('checked')){
 			if(maxDistance.value==""){		    
@@ -95,13 +115,10 @@ $(document).ready(function() {
 				intervalDistance.reportValidity();
 		    	return;
 	        }
-			$('#distanceGraphic').show();	
 		}
-		else {
-			$('#distanceGraphic').hide();		   
-		}
-	});	
-	
+		if (validation>=3)
+			alert('La oferta se ha registrado correctamente.');
+	}
 });
 
 </script>
@@ -137,7 +154,7 @@ $(document).ready(function() {
 					<label>Incluir Imagen (Opcional):</label>
 					<div class="clear"></div>
 					<div style="float: left;width: 25%;display: block">
-						<input id="uploadImage" type="file" name="promotionImage" tabindex="4" onchange="javascript:PreviewImage();" />
+						<input id="uploadImage" type="file" name="promotionImage" tabindex="4" onchange="javascript:previewImage();" />
 					</div>
 					<div style="float: left;width: 100%;display: block;margin-top: 2%">
 						<img id="uploadPreview" src="" style="width: 100%; height: 100%;" />
@@ -167,7 +184,7 @@ $(document).ready(function() {
 				<input type="button" id="acceptButton" value="Aceptar">
 			</div>
 			<div style="float:right;width: 30%;display: inline">
-				 <a href="javascript:window.close();" rel="register">Salir</a>
+				 <a href="company-menu.html" rel="register">Salir</a>
 			</div>						
 		</div>
 		</form>				
